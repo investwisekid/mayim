@@ -34,7 +34,7 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;
             background: rgba(11, 18, 34, 0.85);
         }
-        .hero-video-wrapper video {
+        .hero-video-wrapper iframe {
             width: 100%; height: 100%; position: absolute; top: 0; left: 0;
             object-fit: cover;
         }
@@ -49,6 +49,26 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Carousel Animation */
@@ -117,21 +137,25 @@
                 <a href="#" onclick="showPage('media')" class="hover:text-brand-teal transition">Media</a>
                 <a href="#" onclick="showPage('about')" class="hover:text-brand-teal transition">About Us</a>
             </div>
-            <button class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
+            <button onclick="openDemoModal()" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
                 Request Demo
             </button>
         </nav>
     </header>
+
+    <!-- Sticky CTA (Shows after scrolling) -->
+    <div id="sticky-cta" class="sticky-cta hidden">
+        <button onclick="openDemoModal()" class="bg-brand-blue hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold shadow-2xl transition-all hover:scale-105">
+            Request Demo
+        </button>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="home-page" class="page-visible">
         <!-- Hero Section -->
         <section class="relative h-screen flex items-center justify-center text-center px-6 bg-brand-dark overflow-hidden">
             <div class="hero-video-wrapper">
-                <video autoplay muted loop playsinline style="object-fit: cover;">
-                    <source src="https://archive.org/download/mayimflow/Newest%20Video.mov" type="video/quicktime">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe src="https://www.youtube.com/embed/VydpQhBqmp4?autoplay=1&mute=1&loop=1&playlist=VydpQhBqmp4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="object-fit: cover;"></iframe>
             </div>
             <div class="video-overlay"></div>
             <div class="relative z-20 max-w-5xl reveal active">
@@ -143,7 +167,7 @@
                     Stop damage and eliminate waste with 24-72 hour predictive intelligence.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
+                    <button onclick="openDemoModal()" class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
                     <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all">Explore Technology</button>
                 </div>
             </div>
@@ -324,7 +348,7 @@
             <div class="max-w-4xl mx-auto reveal">
                 <h2 class="text-5xl md:text-8xl font-extrabold text-brand-dark mb-10 tracking-tighter italic">Master the <br><span class="text-brand-blue">Flow.</span></h2>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <button class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
+                    <button onclick="openDemoModal()" class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
                     <button class="bg-slate-100 text-brand-dark px-14 py-5 rounded-full font-bold text-xl hover:bg-slate-200 transition-all">Contact Sales</button>
                 </div>
                 <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Global Enterprise Solutions — Silicon Valley, California</p>
@@ -444,147 +468,3 @@
                 </div>
             </div>
         </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-            <div class="max-w-sm">
-                <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow" class="h-14 w-auto mb-10">
-                <p class="text-slate-400 text-sm leading-relaxed mb-10 italic">Advanced water intelligence and predictive risk management for the modern built world.</p>
-                <div class="flex gap-8 text-slate-500">
-                    <a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-brand-teal transition"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Platform</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition">Technology</li>
-                        <li class="cursor-pointer hover:text-brand-teal transition">Security</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Solutions</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition">Commercial</li>
-                        <li class="cursor-pointer hover:text-brand-teal transition">Data Centers</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-center text-[9px] text-slate-600 font-black uppercase tracking-[0.5em]">
-            © 2025 MayimFlow AI Inc. All Rights Reserved.
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-
-        // Page Navigation
-        function showPage(pageName) {
-            // Hide all pages
-            document.getElementById('home-page').classList.add('page-hidden');
-            document.getElementById('home-page').classList.remove('page-visible');
-            document.getElementById('media-page').classList.add('page-hidden');
-            document.getElementById('media-page').classList.remove('page-visible');
-            document.getElementById('about-page').classList.add('page-hidden');
-            document.getElementById('about-page').classList.remove('page-visible');
-
-            // Show selected page
-            document.getElementById(pageName + '-page').classList.remove('page-hidden');
-            document.getElementById(pageName + '-page').classList.add('page-visible');
-
-            // Scroll to top
-            window.scrollTo(0, 0);
-
-            // Reinitialize lucide icons for new page
-            lucide.createIcons();
-        }
-
-        // Reveal logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-        // Header Style
-        const header = document.getElementById('header');
-        const navLinks = document.getElementById('nav-links');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('nav-glass', 'py-4');
-                header.classList.remove('py-6');
-                navLinks.classList.replace('text-white', 'text-slate-600');
-            } else {
-                header.classList.remove('nav-glass', 'py-4');
-                header.classList.add('py-6');
-                navLinks.classList.replace('text-slate-600', 'text-white');
-            }
-        });
-
-        // Counter Animation
-        function animateCounter(element, target, duration = 2000, formatType = 'default') {
-            let currentValue = 0;
-            const increment = target / (duration / 16);
-            
-            const animate = () => {
-                currentValue += increment;
-                if (currentValue >= target) {
-                    currentValue = target;
-                    if (formatType === 'percent-simple') {
-                        element.textContent = Math.round(target) + '%';
-                    } else if (formatType === 'million') {
-                        element.textContent = '$' + target + 'M';
-                    } else if (formatType === 'thousand') {
-                        element.textContent = Math.floor(target).toLocaleString() + '+';
-                    } else {
-                        element.textContent = Math.floor(target) + '%';
-                    }
-                } else {
-                    if (formatType === 'percent-simple') {
-                        element.textContent = Math.round(currentValue) + '%';
-                    } else if (formatType === 'million') {
-                        element.textContent = '$' + Math.floor(currentValue) + 'M';
-                    } else if (formatType === 'thousand') {
-                        element.textContent = Math.floor(currentValue).toLocaleString() + '+';
-                    } else {
-                        element.textContent = Math.floor(currentValue) + '%';
-                    }
-                    requestAnimationFrame(animate);
-                }
-            };
-            animate();
-        }
-
-        // Start counters when visible
-        const metricsObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting && !entry.target.dataset.animated) {
-                    entry.target.dataset.animated = 'true';
-                    const target = parseFloat(entry.target.dataset.target);
-                    const counter = entry.target.querySelector('.counter');
-                    
-                    if (index === 0) {
-                        animateCounter(counter, target, 2500, 'percent-simple');
-                    } else if (index === 1) {
-                        animateCounter(counter, target, 2500, 'thousand');
-                    } else if (index === 2) {
-                        animateCounter(counter, target, 2500, 'million');
-                    } else if (index === 3) {
-                        animateCounter(counter, target, 2500, 'percent');
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.metric-item').forEach(item => {
-            metricsObserver.observe(item);
-        });
-    </script>
-</body>
-</html>
