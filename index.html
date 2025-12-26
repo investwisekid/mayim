@@ -29,7 +29,7 @@
     </script>
 
 <style>
-    /* HERO VIDEO BACKGROUND FIX - HIGH QUALITY */
+    /* HERO VIDEO BACKGROUND FIX */
     .hero-video-wrapper {
         position: absolute;
         top: 0;
@@ -44,21 +44,36 @@
 
     .hero-video-wrapper iframe {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        min-width: 100%;
-        min-height: 100%;
-        transform: translate(-50%, -50%);
-        object-fit: cover;
     }
 
     .video-overlay {
-        background: rgba(15, 23, 42, 0.5); /* 50% dark overlay */
+        background: rgba(15, 23, 42, 0.6); /* 60% dark overlay */
         position: absolute;
         inset: 0;
         z-index: 10;
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        pointer-events: auto;
+    }
+
+    .hero-text {
+        max-width: 900px;
+        width: 100%;
+        padding: 0 24px;
+        text-align: center;
     }
 
     /* INFINITE LOGO CAROUSEL */
@@ -89,6 +104,7 @@
         border-bottom: 1px solid rgba(241, 245, 249, 1);
     }
 </style>
+
 
 </head>
 <body class="bg-white text-slate-900 antialiased font-sans">
