@@ -22,7 +22,16 @@
                             slate: '#F1F5F9'
                         }
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    animation: {
+                        'scroll-right-to-left': 'scroll-right-to-left 20s linear infinite'
+                    },
+                    keyframes: {
+                        'scroll-right-to-left': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' }
+                        }
+                    }
                 }
             }
         }
@@ -47,6 +56,24 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        /* Scrolling Logo Animation */
+        .logo-scroll-track {
+            display: flex;
+            animation: scroll-right-to-left 20s linear infinite;
+            gap: 3rem;
+        }
+
+        .logo-scroll-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -73,7 +100,7 @@
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center px-6 bg-brand-dark">
         <div class="hero-video-wrapper">
-            <iframe src="https://www.youtube.com/embed/VydpQhBqmp4?autoplay=1&mute=1&loop=1&playlist=VydpQhBqmp4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+            <iframe src="https://player.vimeo.com/video/1149403801?autoplay=1&mute=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="video-overlay"></div>
         <div class="relative z-20 max-w-5xl reveal active">
@@ -111,36 +138,55 @@
         </div>
     </div>
 
-    <!-- 2. Alumni Logo Section -->
+    <!-- 2. Alumni Logo Section with Scrolling Animation -->
     <section class="py-20 overflow-hidden bg-white">
         <h2 class="text-center text-[11px] font-bold text-slate-500 uppercase tracking-[0.4em] mb-12 italic">Built in Silicon Valley. Alumni of Industry Giants</h2>
         <div class="relative flex overflow-hidden border-y border-slate-50 py-12">
-            <div class="max-w-7xl mx-auto px-6 w-full">
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-12 items-center justify-items-center">
-                    <!-- Google Logo -->
-                    <div class="flex flex-col items-center">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Google%20logo.png" alt="Google Logo" class="h-20 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
+            <div class="logo-scroll-track">
+                <!-- Google Logo -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/3fc2c9ceec9eb267564f76706fcd0f524268d92b/google-logo-transparent.png" alt="Google Logo" class="h-20 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
 
-                    <!-- TechCrunch Logo -->
-                    <div class="flex items-center gap-2">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/techcrunch-logo-1024x346.png" alt="TechCrunch Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
+                <!-- TechCrunch Logo -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/techcrunch-logo-1024x346.png" alt="TechCrunch Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
 
-                    <!-- Microsoft Logo -->
-                    <div class="flex items-center gap-2">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
+                <!-- Microsoft Logo -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
 
-                    <!-- Oracle Logo -->
-                    <div class="flex items-center gap-2">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
+                <!-- Oracle Logo -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
 
-                    <!-- IBM Logo -->
-                    <div class="flex items-center gap-2">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
+                <!-- IBM Logo -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/3fc2c9ceec9eb267564f76706fcd0f524268d92b/google-logo-transparent.png" alt="Google Logo" class="h-20 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/techcrunch-logo-1024x346.png" alt="TechCrunch Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-18 w-auto object-contain hover:scale-110 transition-all duration-300">
                 </div>
             </div>
         </div>
@@ -159,7 +205,7 @@
                     <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/techcrunch-logo-1024x346.png" alt="TechCrunch Logo" class="h-20 w-auto object-contain">
                 </div>
                 <div class="flex items-center gap-1 hover:scale-110 transition-all duration-300">
-                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Google%20logo.png" alt="Google Logo" class="h-20 w-auto object-contain">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/3fc2c9ceec9eb267564f76706fcd0f524268d92b/google-logo-transparent.png" alt="Google Logo" class="h-20 w-auto object-contain">
                 </div>
             </div>
         </div>
@@ -187,10 +233,10 @@
             </div>
             
             <div class="lg:w-7/12 reveal delay-200">
-                <div class="bg-brand-slate rounded-[2.5rem] p-8 shadow-inner border border-slate-100 relative group">
+                <div class="bg-brand-slate rounded-[2.5rem] p-8 shadow-inner border border-slate-100 relative group overflow-hidden">
                     <img src="https://raw.githubusercontent.com/investwisekid/mayim/2e4d5b1041d9fecff3b65322f07d5d1fe480fad8/dashboard.png" 
                          alt="MayimFlow Dashboard" 
-                         class="rounded-[2rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] w-full h-auto">
+                         class="rounded-[2rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.05] w-full h-auto scale-[2] origin-top-left">
                 </div>
             </div>
         </div>
