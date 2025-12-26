@@ -51,13 +51,13 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
-        /* Carousel Animation - Slower with less gap */
+        /* Carousel Animation - Seamless Loop */
         @keyframes carousel {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(calc(-100% / 2));
             }
         }
 
@@ -168,6 +168,38 @@
         <div class="relative flex overflow-hidden border-y border-slate-50 py-12">
             <div class="logo-carousel-container">
                 <div class="logo-carousel-track">
+                    <!-- First Set -->
+                    <!-- Microsoft Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- Oracle Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- IBM Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- MIT Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/mit.png" alt="MIT Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- Harvard Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/harvard-removebg-preview.png" alt="Harvard Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- Cornell Logo -->
+                    <div class="logo-carousel-item">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/cornell.gif" alt="Cornell Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                    </div>
+
+                    <!-- Second Set (Duplicate for seamless loop) -->
                     <!-- Microsoft Logo -->
                     <div class="logo-carousel-item">
                         <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
@@ -388,8 +420,8 @@
                 currentValue += increment;
                 if (currentValue >= target) {
                     currentValue = target;
-                    if (formatType === 'percent') {
-                        element.textContent = target.toFixed(4) + '%';
+                    if (formatType === 'percent-simple') {
+                        element.textContent = Math.round(target) + '%';
                     } else if (formatType === 'million') {
                         element.textContent = '$' + target + 'M';
                     } else if (formatType === 'thousand') {
@@ -398,8 +430,8 @@
                         element.textContent = Math.floor(target) + '%';
                     }
                 } else {
-                    if (formatType === 'percent') {
-                        element.textContent = currentValue.toFixed(2) + '%';
+                    if (formatType === 'percent-simple') {
+                        element.textContent = Math.round(currentValue) + '%';
                     } else if (formatType === 'million') {
                         element.textContent = '$' + Math.floor(currentValue) + 'M';
                     } else if (formatType === 'thousand') {
@@ -422,7 +454,7 @@
                     const counter = entry.target.querySelector('.counter');
                     
                     if (index === 0) {
-                        animateCounter(counter, target, 2500, 'percent');
+                        animateCounter(counter, target, 2500, 'percent-simple');
                     } else if (index === 1) {
                         animateCounter(counter, target, 2500, 'thousand');
                     } else if (index === 2) {
