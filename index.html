@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MayimFlow | Predictive AI Water Analytics</title>
+    <meta name="description" content="Predict water issues 24-72 hours before they happen with MayimFlow's AI-powered analytics platform.">
     
-    <!-- UI Libraries -->
+    <!-- Fonts & UI Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,301 +18,371 @@
                     colors: {
                         brand: {
                             blue: '#0066CC',
+                            lightBlue: '#1E90FF',
                             teal: '#00A8E8',
                             dark: '#0F172A',
                             gray: '#F8F9FA'
                         }
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
 
-<style>
-    /* HERO VIDEO BACKGROUND FIX */
-    .hero-video-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        overflow: hidden;
-        pointer-events: none;
-        background: #000;
-    }
+    <style>
+        /* YouTube Video Background */
+        .youtube-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .youtube-background iframe {
+            width: 100vw;
+            height: 100vh;
+            min-height: 100vh;
+            object-fit: cover;
+            border: none;
+        }
 
-    .hero-video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+        /* Infinite Logo Carousel */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
 
-    .video-overlay {
-        background: rgba(15, 23, 42, 0.6); /* 60% dark overlay */
-        position: absolute;
-        inset: 0;
-        z-index: 10;
-        pointer-events: none;
-    }
+        .logo-carousel-track {
+            display: flex;
+            width: calc(250px * 14); /* Width of logos * count */
+            animation: scroll 40s linear infinite;
+        }
 
-    .hero-content {
-        position: relative;
-        z-index: 20;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100%;
-        pointer-events: auto;
-    }
+        .logo-carousel-track:hover {
+            animation-play-state: paused;
+        }
 
-    .hero-text {
-        max-width: 900px;
-        width: 100%;
-        padding: 0 24px;
-        text-align: center;
-    }
+        /* Video Background Overlay */
+        .video-overlay {
+            background: rgba(15, 23, 42, 0.45); /* 45% Opacity Dark Overlay */
+        }
 
-    /* INFINITE LOGO CAROUSEL */
-    @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-    .logo-track {
-        display: flex;
-        width: calc(250px * 14);
-        animation: scroll 40s linear infinite;
-    }
-    .logo-track:hover { animation-play-state: paused; }
+        /* Scroll Reveal Effect */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease-out;
-    }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .nav-glass {
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(241, 245, 249, 1);
-    }
-</style>
+        /* Custom UI Components */
+        .btn-primary {
+            background-color: #0066CC;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 102, 204, 0.3);
+        }
 
+        .market-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
 
+        .timeline-line {
+            background: linear-gradient(to right, #0066CC, #00A8E8);
+        }
+
+        /* Logo Image Styling */
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body class="bg-white text-slate-900 antialiased font-sans">
+<body class="bg-white text-slate-900 font-sans antialiased">
 
-    <!-- Navigation -->
-    <header id="header" class="fixed top-0 w-full z-[100] transition-all duration-300 py-4">
+    <!-- Header / Nav -->
+    <header id="nav" class="fixed top-0 w-full z-[100] transition-all duration-300 py-6">
         <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow Logo" class="h-12 w-auto drop-shadow-sm">
-            </a>
-
-            <div class="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest text-white transition-colors" id="nav-links">
-                <a href="#solutions" class="hover:text-brand-teal transition">Solutions</a>
-                <a href="#features" class="hover:text-brand-teal transition">Technology</a>
-                <a href="#how-it-works" class="hover:text-brand-teal transition">Process</a>
-                <a href="#roi" class="hover:text-brand-teal transition">ROI</a>
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <img src="https://raw.githubusercontent.com/investwisekid/mayim/7842947adfa441c0f7efff67b8d9b706c48a7fc3/Mayimflow1.png" alt="MayimFlow Logo" class="logo-img shadow-lg transition-transform group-hover:rotate-12">
+                <span class="text-2xl font-extrabold tracking-tight text-white transition-colors drop-shadow-md" id="logo-text">MayimFlow</span>
             </div>
 
-            <button class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-all transform hover:-translate-y-0.5">
+            <div class="hidden md:flex items-center gap-10 text-sm font-semibold text-white uppercase tracking-widest" id="nav-links">
+                <a href="#solutions" class="hover:text-brand-teal transition">Solutions</a>
+                <a href="#features" class="hover:text-brand-teal transition">Technology</a>
+                <a href="#timeline" class="hover:text-brand-teal transition">Process</a>
+                <a href="#roi" class="hover:text-brand-teal transition">Impact</a>
+            </div>
+
+            <a href="#contact" class="bg-brand-blue text-white px-6 py-3 rounded-full text-sm font-bold btn-primary">
                 Request Demo
-            </button>
+            </a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen w-full flex items-center justify-center text-center px-6 overflow-hidden bg-brand-dark">
-        <!-- YouTube Background Video -->
-        <div class="hero-video-wrapper">
-      <iframe 
-    src="https://www.youtube.com/embed/VydpQhBqmp4?autoplay=1&mute=1&loop=1&playlist=VydpQhBqmp4&controls=0&modestbranding=1&iv_load_policy=3&rel=0" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
+    <!-- Hero Section with YouTube Background Video -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- YouTube Video Background -->
+        <div class="youtube-background">
+            <iframe 
+                src="https://www.youtube.com/embed/VydpQhBqmp4?autoplay=1&mute=1&loop=1&playlist=VydpQhBqmp4&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0"
+                title="MayimFlow Background Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
         
-        <div class="video-overlay"></div>
+        <!-- Video Overlay -->
+        <div class="absolute inset-0 z-10 video-overlay"></div>
+
+        <!-- Logo Watermark -->
+        <div class="absolute bottom-10 right-10 z-20 opacity-40 grayscale flex items-center gap-2 pointer-events-none">
+            <img src="https://raw.githubusercontent.com/investwisekid/mayim/7842947adfa441c0f7efff67b8d9b706c48a7fc3/Mayimflow1.png" alt="MayimFlow" class="w-10 h-10">
+            <span class="text-2xl font-bold text-white tracking-tighter">MayimFlow</span>
+        </div>
 
         <!-- Hero Content -->
-        <div class="relative z-20 max-w-4xl reveal active">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
-                Predict Water Issues <br>
-                <span class="text-brand-teal italic">Before They Happen</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-100 mb-10 font-light leading-relaxed">
-                Our AI-powered platform provides <span class="font-bold border-b-4 border-brand-teal">24-72 hour advance alerts</span>, 
-                eliminating damage and waste for critical infrastructure.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <button class="w-full sm:w-auto bg-brand-blue text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl">
-                    Request Demo
-                </button>
-                <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
-                    Learn More
-                </button>
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+            <div class="reveal active">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
+                    Predict Water Issues <br>
+                    <span class="text-brand-teal">Before They Happen</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-100 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                    Moving beyond reactive detection. Get AI-powered alerts <span class="font-bold border-b-2 border-brand-teal">24-72 hours in advance</span> to stop damage before it starts.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <button class="w-full sm:w-auto bg-brand-blue text-white px-10 py-5 rounded-2xl font-bold text-lg btn-primary">
+                        Request Demo
+                    </button>
+                    <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">
+                        Learn More
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Logo Carousel -->
+    <!-- Logo Carousel Section -->
     <section class="py-16 border-b border-slate-100 overflow-hidden bg-white">
         <h2 class="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-12">Trusted by Enterprise Leaders</h2>
         <div class="relative flex overflow-hidden">
-            <div class="logo-track">
-                <!-- Group 1 -->
-                <div class="flex items-center gap-24 px-12 grayscale opacity-40 contrast-125">
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">GLOBALNET</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">DATACORP</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">AQUAVISTA</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">TECHFLOW</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">METRO-INFRA</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">VERIDIAN</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">ORBITAL</span>
+            <div class="logo-carousel-track">
+                <!-- Set 1 -->
+                <div class="flex items-center gap-20 px-10 grayscale opacity-40 contrast-125">
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">GLOBALNET</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">DATACORP</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">AQUAVISTA</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">TECHFLOW</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">METRO-INFRA</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">VERIDIAN</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">ORBITAL</span>
                 </div>
-                <!-- Group 2 (Loop) -->
-                <div class="flex items-center gap-24 px-12 grayscale opacity-40 contrast-125">
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">GLOBALNET</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">DATACORP</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">AQUAVISTA</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">TECHFLOW</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">METRO-INFRA</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">VERIDIAN</span>
-                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic uppercase">ORBITAL</span>
+                <!-- Set 2 (Infinite Loop) -->
+                <div class="flex items-center gap-20 px-10 grayscale opacity-40 contrast-125">
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">GLOBALNET</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">DATACORP</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">AQUAVISTA</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">TECHFLOW</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">METRO-INFRA</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">VERIDIAN</span>
+                    <span class="text-2xl font-bold text-slate-800 tracking-tighter">ORBITAL</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Markets -->
+    <!-- Markets Section -->
     <section id="solutions" class="py-24 px-6 bg-brand-gray/50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl font-bold text-brand-dark mb-4">Core Market Solutions</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Specialized AI analytics for high-stakes water environments.</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">Core Markets</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Specialized intelligence for environments where water failure isn't an option.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 reveal">
-                    <i data-lucide="server" class="text-brand-blue w-10 h-10 mb-6"></i>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 market-card transition-all duration-300 reveal">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="server" class="text-brand-blue w-8 h-8"></i>
+                    </div>
                     <h3 class="text-2xl font-bold mb-4">Data Centers</h3>
-                    <p class="text-slate-600 leading-relaxed">Securing mission-critical cooling loops and liquid-to-chip infrastructure from catastrophic uptime threats.</p>
+                    <p class="text-slate-600 leading-relaxed">Securing mission-critical cooling systems and secondary loops against micro-leaks and structural fatigue before they threaten uptime.</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 reveal delay-100">
-                    <i data-lucide="building-2" class="text-brand-teal w-10 h-10 mb-6"></i>
+
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 market-card transition-all duration-300 reveal delay-100">
+                    <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="building-2" class="text-brand-teal w-8 h-8"></i>
+                    </div>
                     <h3 class="text-2xl font-bold mb-4">Commercial</h3>
-                    <p class="text-slate-600 leading-relaxed">Intelligent monitoring for HVAC, complex plumbing networks, and irrigation waste in high-rise portfolios.</p>
+                    <p class="text-slate-600 leading-relaxed">Integrated monitoring for HVAC, complex plumbing, and high-volume irrigation in Class-A office space and industrial complexes.</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 reveal delay-200">
-                    <i data-lucide="factory" class="text-slate-600 w-10 h-10 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Municipalities</h3>
-                    <p class="text-slate-600 leading-relaxed">Detecting main-line bursts and optimizing distribution network health for city water authorities.</p>
+
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 market-card transition-all duration-300 reveal delay-200">
+                    <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="factory" class="text-slate-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Infrastructure</h3>
+                    <p class="text-slate-600 leading-relaxed">Predicting main-line bursts and optimizing distribution networks for municipal water authorities and treatment facilities.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Timeline / Process -->
-    <section id="how-it-works" class="py-24 px-6 bg-brand-dark text-white">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 italic">The 72-Hour Lead Time</h2>
-                <p class="text-slate-400 text-lg">Reactive detection is legacy. Predictive intelligence is MayimFlow.</p>
-            </div>
-            
-            <div class="space-y-16 relative">
-                <div class="absolute left-[31px] top-0 h-full w-0.5 bg-gradient-to-b from-brand-blue to-brand-teal opacity-30"></div>
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-8 leading-tight">Advanced Anomaly Detection Powered by <span class="text-brand-blue">AI</span></h2>
+                
+                <div class="grid gap-10">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+                            <i data-lucide="brain-circuit" class="text-brand-blue"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-brand-dark">Predictive Machine Learning</h4>
+                            <p class="text-slate-500">Our neural networks analyze vibration, pressure, and flow patterns to identify "pre-failure" signatures days before a leak occurs.</p>
+                        </div>
+                    </div>
 
-                <div class="relative flex items-center gap-10 reveal">
-                    <div class="w-16 h-16 rounded-full bg-brand-blue flex items-center justify-center font-bold text-xl z-10 shadow-lg shadow-blue-500/20">-72h</div>
-                    <div>
-                        <h4 class="text-xl font-bold text-brand-blue">Signature Detection</h4>
-                        <p class="text-slate-400">AI identifies vibration and pressure micro-oscillations that indicate imminent mechanical failure.</p>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center">
+                            <i data-lucide="bell" class="text-brand-teal"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-brand-dark">Autonomous Alerts</h4>
+                            <p class="text-slate-500">24/7 autonomous monitoring system that notifies your maintenance team with precise location data the moment a risk is detected.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center">
+                            <i data-lucide="shield-check" class="text-slate-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-brand-dark">Damage Prevention</h4>
+                            <p class="text-slate-500">Reduce insurance premiums and eliminate catastrophic property damage by acting in the critical 48-hour pre-event window.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="relative flex items-center gap-10 reveal delay-200">
-                    <div class="w-16 h-16 rounded-full bg-brand-teal flex items-center justify-center font-bold text-xl z-10 shadow-lg shadow-teal-500/20">-24h</div>
-                    <div>
-                        <h4 class="text-xl font-bold text-brand-teal">Preventive Action</h4>
-                        <p class="text-slate-400">Maintenance teams receive a detailed brief. Problem solved before water ever touches the floor.</p>
+            <div class="lg:w-1/2 bg-brand-gray rounded-3xl p-8 reveal delay-200">
+                <div class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100">
+                    <div class="flex justify-between items-center mb-8">
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">System Health</p>
+                            <h5 class="text-xl font-bold">Node Analysis</h5>
+                        </div>
+                        <div class="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                            ACTIVE MONITORING
+                        </div>
+                    </div>
+                    <!-- Mock Data Vis -->
+                    <div class="space-y-6">
+                        <div class="h-1 bg-slate-100 rounded-full w-full overflow-hidden">
+                            <div class="bg-brand-blue h-full w-2/3"></div>
+                        </div>
+                        <div class="h-1 bg-slate-100 rounded-full w-full overflow-hidden">
+                            <div class="bg-brand-teal h-full w-1/2"></div>
+                        </div>
+                        <div class="bg-blue-600 text-white p-6 rounded-2xl flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] font-bold uppercase opacity-80">Anomaly Predicted</p>
+                                <p class="text-lg font-bold">Pump Strain Detected</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-bold uppercase opacity-80">Est. Lead Time</p>
+                                <p class="text-2xl font-mono font-bold">42:15:00</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI -->
-    <section id="roi" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-center">
-            <div class="reveal">
-                <div class="text-6xl font-black text-brand-blue mb-2">40%</div>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Waste Reduced</p>
-            </div>
-            <div class="reveal delay-100">
-                <div class="text-6xl font-black text-brand-teal mb-2">$1.8M</div>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Avg. Savings</p>
-            </div>
-            <div class="reveal delay-200">
-                <div class="text-6xl font-black text-brand-blue mb-2">99.9%</div>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Avoided Damage</p>
-            </div>
-            <div class="reveal delay-300">
-                <div class="text-6xl font-black text-brand-teal mb-2">35%</div>
-                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Ins. Discount</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brand-gray pt-20 pb-10 px-6 border-t border-slate-200 text-center">
+    <!-- How It Works Timeline -->
+    <section id="timeline" class="py-24 px-6 bg-brand-dark text-white overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow" class="h-10 w-auto mx-auto mb-6">
-            <p class="text-slate-500 text-sm max-w-md mx-auto mb-8">World-class predictive water analytics for the enterprise infrastructure of tomorrow.</p>
-            <div class="flex justify-center gap-6 mb-12 text-slate-400">
-                <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-brand-blue transition"></i>
-                <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-brand-blue transition"></i>
-                <i data-lucide="mail" class="w-5 h-5 cursor-pointer hover:text-brand-blue transition"></i>
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 italic">The 72-Hour Advantage</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Why wait for a flood when you can stop the source days in advance?</p>
             </div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">
-                © 2025 MayimFlow AI Inc. All Rights Reserved.
+
+            <div class="relative">
+                <!-- Line -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 timeline-line -translate-y-1/2 z-0 opacity-30"></div>
+                
+                <div class="grid lg:grid-cols-4 gap-12 relative z-10">
+                    <div class="reveal">
+                        <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20 mx-auto lg:mx-0">
+                            <span class="text-xl font-bold italic">-72h</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center lg:text-left">Detection</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed text-center lg:text-left">AI identifies molecular-level vibration shifts in pipe joints that standard sensors ignore.</p>
+                    </div>
+
+                    <div class="reveal delay-100">
+                        <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20 mx-auto lg:mx-0">
+                            <span class="text-xl font-bold italic">-48h</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center lg:text-left">Verification</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed text-center lg:text-left">Anomaly is cross-referenced with local humidity and pressure maps to confirm structural risk.</p>
+                    </div>
+
+                    <div class="reveal delay-200">
+                        <div class="w-16 h-16 bg-brand-teal rounded-full flex items-center justify-center mb-6 shadow-xl shadow-teal-500/20 mx-auto lg:mx-0">
+                            <span class="text-xl font-bold italic">-24h</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center lg:text-left">Action</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed text-center lg:text-left">Autonomous alerts dispatched to onsite teams with specific GPS coordinates for inspection.</p>
+                    </div>
+
+                    <div class="reveal delay-300">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl shadow-white/20 mx-auto lg:mx-0">
+                            <i data-lucide="check" class="text-brand-blue w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-center lg:text-left text-brand-teal">Prevention</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed text-center lg:text-left">Issue resolved during routine maintenance shift. Zero damage, zero downtime.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        lucide.createIcons();
-
-        // SCROLL ANIMATIONS
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-        // HEADER SCROLL EFFECT
-        const header = document.getElementById('header');
-        const navLinks = document.getElementById('nav-links');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('nav-glass');
-                navLinks.classList.replace('text-white', 'text-slate-600');
-            } else {
-                header.classList.remove('nav-glass');
-                navLinks.classList.replace('text-slate-600', 'text-white');
-            }
-        });
-    </script>
-</body>
-</html>
+    <!-- ROI Metrics -->
+    <section id="roi" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div class="p-8 border-l-4 border-brand-blue reveal">
+                <div class="text-5xl font-extrabold text-brand-dark mb-2">35%</div>
+                <p class="text-slate-500 text-sm font-bold uppercase tracking-widest">Water Waste Reduced</p>
+            </div>
+            <div class="p-8 border-l-4 border-brand-teal reveal delay-100">
+                <div class="text-5xl font-extrabold text-brand-dark mb-2">$1.2M</div>
+                <p class="text-slate-500 text-sm font-bold uppercase tracking-widest">Avg. Yearly Savings</p>
+            </div>
+            <div class="p-8 border-l-4 border-brand-blue reveal delay-200">
+                <div class="text-5xl font-extrabold text-brand-dark mb-2">99.9%</div>
+                <p class="text-slate-500 text-sm font-bold uppercase tracking-widest">Avoided Damage</p>
+            </div>
+            <div class="p-8 border-l-4 border-brand-teal reveal delay-300">
+                <div class="text-5xl font-extrabold text-brand-dark mb-2">40%</div>
+                <p class="text-slate-500 text-sm font-bold uppercase tracking-widest">Insurance Claims Cut</p>
