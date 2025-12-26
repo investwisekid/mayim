@@ -51,13 +51,13 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
-        /* Carousel Animation - Continuous Smooth Loop */
+        /* Carousel Animation - Continuous Smooth Loop with gap between logos */
         @keyframes carousel {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(calc(-100% - 4rem));
             }
         }
 
@@ -68,8 +68,8 @@
 
         .logo-carousel-track {
             display: flex;
-            gap: 2rem;
-            animation: carousel 40s linear infinite;
+            gap: 4rem;
+            animation: carousel 60s linear infinite;
             width: max-content;
         }
 
@@ -170,62 +170,37 @@
                 <div class="logo-carousel-track">
                     <!-- IBM Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
                     <!-- MIT Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/mit.png" alt="MIT Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/mit.png" alt="MIT Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
                     <!-- Oracle Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
                     <!-- Harvard Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/harvard-removebg-preview.png" alt="Harvard Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/harvard-removebg-preview.png" alt="Harvard Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
                     <!-- Microsoft Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
                     <!-- Cornell Logo -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/cornell.gif" alt="Cornell Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/cornell.gif" alt="Cornell Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
 
-                    <!-- IBM Logo -->
+                    <!-- IBM Logo (Duplicate for seamless loop) -->
                     <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
-
-                    <!-- MIT Logo -->
-                    <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/mit.png" alt="MIT Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
-
-                    <!-- Oracle Logo -->
-                    <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
-
-                    <!-- Harvard Logo -->
-                    <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/harvard-removebg-preview.png" alt="Harvard Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
-
-                    <!-- Microsoft Logo -->
-                    <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
-                    </div>
-
-                    <!-- Cornell Logo -->
-                    <div class="logo-carousel-item">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/cornell.gif" alt="Cornell Logo" class="h-32 w-auto object-contain hover:scale-110 transition-all duration-300">
+                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
                     </div>
                 </div>
             </div>
