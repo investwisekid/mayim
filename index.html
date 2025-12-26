@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MayimFlow | Enterprise Water Intelligence & AI Anomaly Detection</title>
+    <title>MayimFlow | Enterprise Water Intelligence & AI Predictive Analytics</title>
     
     <!-- UI Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,7 +29,7 @@
     </script>
 
     <style>
-        /* Miyam-Style Hero Video Fix */
+        /* WINT-Style Hero Video */
         .hero-video-wrapper {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;
         }
@@ -37,7 +37,7 @@
             width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; 
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
-        .video-overlay { background: rgba(11, 18, 34, 0.6); position: absolute; inset: 0; z-index: 10; }
+        .video-overlay { background: rgba(11, 18, 34, 0.55); position: absolute; inset: 0; z-index: 10; }
 
         /* Smooth Reveal Transitions */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -45,11 +45,14 @@
 
         /* Infinite Logo Carousel */
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .logo-track { display: flex; width: calc(250px * 14); animation: scroll 40s linear infinite; }
+        .logo-track { display: flex; width: calc(250px * 12); animation: scroll 35s linear infinite; }
         .logo-track:hover { animation-play-state: paused; }
 
-        /* Mayim Blue Gradient Bar */
-        .gradient-accent { background: linear-gradient(90deg, #0066CC 0%, #00A8E8 100%); }
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased overflow-x-hidden">
@@ -60,13 +63,13 @@
             <a href="#" class="flex items-center">
                 <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow Logo" class="h-14 w-auto drop-shadow-lg">
             </a>
-            <div id="nav-links" class="hidden md:flex items-center gap-10 text-[13px] font-bold uppercase tracking-[0.15em] text-white">
+            <div id="nav-links" class="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.25em] text-white">
                 <a href="#platform" class="hover:text-brand-teal transition">Platform</a>
                 <a href="#solutions" class="hover:text-brand-teal transition">Solutions</a>
-                <a href="#technology" class="hover:text-brand-teal transition">Technology</a>
                 <a href="#impact" class="hover:text-brand-teal transition">Impact</a>
+                <a href="#contact" class="hover:text-brand-teal transition">Contact</a>
             </div>
-            <button class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all">
+            <button class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
                 Request Demo
             </button>
         </nav>
@@ -80,248 +83,221 @@
         <div class="video-overlay"></div>
         <div class="relative z-20 max-w-5xl reveal active">
             <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-6 tracking-tighter leading-[1.05]">
-                Real Water <br><span class="text-brand-teal">Intelligence.</span>
+                Mastering the <br><span class="text-brand-teal italic">Flow of Water.</span>
             </h1>
             <p class="text-xl md:text-2xl text-slate-200 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
-                Autonomous AI-powered water management for the built environment. 
-                Detect leaks, prevent damage, and eliminate waste 24-72 hours before it happens.
+                Autonomous AI-powered water management for enterprise infrastructure. 
+                Stop damage and eliminate waste with 24-72 hour predictive intelligence.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <button class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
-                <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all">Watch the Platform</button>
+                <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all">Explore Technology</button>
             </div>
         </div>
     </section>
 
-    <!-- Impact Bar (Miyam Style) -->
-    <div class="relative z-30 -mt-12 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-1 bg-white shadow-2xl rounded-2xl overflow-hidden reveal">
-        <div class="p-10 text-center border-r border-slate-100">
-            <p class="text-brand-blue font-black text-5xl mb-2">25%</p>
-            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">Avg. Consumption Cut</p>
+    <!-- 1. Metrics Bar -->
+    <div class="relative z-30 -mt-16 max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-1 bg-white shadow-2xl rounded-2xl overflow-hidden reveal">
+        <div class="p-8 text-center border-r border-slate-100">
+            <p class="text-brand-blue font-black text-4xl mb-1">25%</p>
+            <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Consumption Cut</p>
         </div>
-        <div class="p-10 text-center border-r border-slate-100">
-            <p class="text-brand-teal font-black text-5xl mb-2">10k+</p>
-            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">Incidents Prevented</p>
+        <div class="p-8 text-center border-r border-slate-100">
+            <p class="text-brand-teal font-black text-4xl mb-1">10k+</p>
+            <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Leaks Prevented</p>
         </div>
-        <div class="p-10 text-center">
-            <p class="text-brand-blue font-black text-5xl mb-2">99.9%</p>
-            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">Reliability Uptime</p>
+        <div class="p-8 text-center border-r border-slate-100">
+            <p class="text-brand-blue font-black text-4xl mb-1">$1.2B</p>
+            <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Damage Averted</p>
+        </div>
+        <div class="p-8 text-center">
+            <p class="text-brand-teal font-black text-4xl mb-1">99.9%</p>
+            <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">System Uptime</p>
         </div>
     </div>
 
-    <!-- The Science Section -->
+    <!-- 2. Alumni Carousel Segment -->
+    <section class="py-20 overflow-hidden bg-white">
+        <h2 class="text-center text-[11px] font-bold text-slate-500 uppercase tracking-[0.4em] mb-12 italic">Built in Silicon Valley. Alumni of Industry Giants</h2>
+        <div class="relative flex overflow-hidden border-y border-slate-50 py-10">
+            <div class="logo-track">
+                <!-- Group 1 -->
+                <div class="flex items-center gap-24 px-12 grayscale opacity-40">
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">Microsoft</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">Oracle</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">IBM</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">MIT</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">Harvard</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">Cornell</span>
+                </div>
+                <!-- Duplicate for Loop -->
+                <div class="flex items-center gap-24 px-12 grayscale opacity-40">
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">Microsoft</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">Oracle</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic">IBM</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">MIT</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">Harvard</span>
+                    <span class="text-2xl font-black text-slate-800 tracking-tighter italic font-serif uppercase">Cornell</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Award Section -->
+    <section class="py-12 bg-brand-slate/30 border-b border-slate-100 reveal">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <div class="inline-flex items-center gap-2 mb-6">
+                <i data-lucide="award" class="text-brand-teal w-5 h-5"></i>
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-brand-blue">Excellence in Innovation</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 tracking-tight">Winner of the 2025 TechCrunch Google Industry Award</h3>
+            <div class="flex items-center justify-center gap-12 md:gap-20 grayscale opacity-50 transition-opacity hover:opacity-100">
+                <div class="flex flex-col items-center">
+                    <span class="text-xl font-black tracking-tighter italic text-slate-800">TechCrunch</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <div class="w-3 h-3 bg-[#4285F4] rounded-full"></div>
+                    <span class="text-xl font-semibold tracking-tight text-slate-800">Google</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Platform Section (Dashboard) -->
     <section id="platform" class="py-32 px-6">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-            <div class="lg:w-1/2 reveal">
-                <h4 class="text-brand-blue font-bold tracking-[0.3em] uppercase text-xs mb-4">Water Intelligence</h4>
-                <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 leading-tight">Smart Analysis. <br>Built-in Autonomy.</h2>
+            <div class="lg:w-5/12 reveal">
+                <h4 class="text-brand-blue font-bold tracking-[0.3em] uppercase text-xs mb-4">The Platform</h4>
+                <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tighter">Real-Time <br>Intelligence.</h2>
                 <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    MayimFlow's devices don't just detect water—they understand it. Our autonomous AI learns your building's unique flow patterns, identifying anomalies from pinhole drips to massive bursts in real-time.
+                    MayimFlow provides the industry's most advanced water management dashboard. Using a decade of AI training data, our platform translates complex flow patterns into actionable insights for facility leaders.
                 </p>
-                <div class="grid sm:grid-cols-2 gap-8">
-                    <div class="flex gap-4">
-                        <i data-lucide="zap" class="text-brand-teal w-6 h-6 flex-shrink-0"></i>
-                        <p class="text-sm font-semibold text-slate-700">Immediate response even when connectivity is down.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <i data-lucide="check-circle-2" class="text-brand-teal w-6 h-6"></i>
+                        <p class="font-bold text-slate-700 italic">Advanced Anomaly Detection</p>
                     </div>
-                    <div class="flex gap-4">
-                        <i data-lucide="shield-check" class="text-brand-blue w-6 h-6 flex-shrink-0"></i>
-                        <p class="text-sm font-semibold text-slate-700">Insurance-grade protection across entire portfolios.</p>
+                    <div class="flex items-center gap-4">
+                        <i data-lucide="check-circle-2" class="text-brand-blue w-6 h-6"></i>
+                        <p class="font-bold text-slate-700 italic">Autonomous Mitigation Protocols</p>
                     </div>
                 </div>
-           <div class="lg:w-1/2 relative reveal delay-200">
-<div class="bg-brand-slate rounded-[3rem] p-4 shadow-inner">
-<img src="https://raw.githubusercontent.com/investwisekid/mayim/2e4d5b1041d9fecff3b65322f07d5d1fe480fad8/dashboard.png?auto=format&fit=crop&q=80&w=1200" class="rounded-[2.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" alt="Dashboard Visualization">
-</div>
-</div>
-</div>
-</section>
-
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-24 bg-brand-dark text-white rounded-[4rem] mx-4 px-6 reveal">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Designed for Mission-Critical Environments</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto italic">Tailored intelligence for the most demanding infrastructure.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="group cursor-pointer">
-                    <div class="h-64 rounded-3xl overflow-hidden mb-6 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-500" alt="Data Centers">
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">Data Centers <i data-lucide="chevron-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i></h3>
-                    <p class="text-slate-400 leading-relaxed">Securing liquid cooling systems and facility loops with 99.9% uptime assurance.</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="h-64 rounded-3xl overflow-hidden mb-6 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-500" alt="Commercial">
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">Commercial Buildings <i data-lucide="chevron-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i></h3>
-                    <p class="text-slate-400 leading-relaxed">Protecting high-rise assets, reducing insurance claims, and driving ESG compliance.</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="h-64 rounded-3xl overflow-hidden mb-6 bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-500" alt="Infrastructure">
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">Public Infrastructure <i data-lucide="chevron-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"></i></h3>
-                    <p class="text-slate-400 leading-relaxed">Optimizing municipal distribution networks and preventing massive main-line failures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology / How it Works -->
-    <section id="technology" class="py-32 px-6">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-24 reveal">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-6 tracking-tight italic">How MayimFlow Works</h2>
-                <p class="text-slate-500 text-xl">The science of water flow, powered by a decade of AI training data.</p>
             </div>
             
-            <div class="space-y-32">
-                <div class="flex flex-col md:flex-row items-center gap-16 reveal">
-                    <div class="md:w-1/2">
-                        <span class="text-brand-blue font-black text-sm uppercase tracking-widest mb-4 block">01. Edge Intelligence</span>
-                        <h3 class="text-3xl font-extrabold mb-6">Autonomous Processing</h3>
-                        <p class="text-slate-600 leading-relaxed italic">Our IoT edge devices monitor flows 1,000 times per second. Unlike legacy cloud-only systems, MayimFlow acts locally to shut off water instantly when a burst is detected.</p>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <div class="w-64 h-64 bg-brand-slate rounded-full flex items-center justify-center relative shadow-inner">
-                            <i data-lucide="cpu" class="text-brand-blue w-24 h-24 animate-pulse"></i>
-                            <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg border border-slate-100 text-[10px] font-bold">1k/sec SCAN RATE</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row-reverse items-center gap-16 reveal delay-200">
-                    <div class="md:w-1/2">
-                        <span class="text-brand-teal font-black text-sm uppercase tracking-widest mb-4 block">02. Contextual ML</span>
-                        <h3 class="text-3xl font-extrabold mb-6">Adaptive Flow Models</h3>
-                        <p class="text-slate-600 leading-relaxed italic">Our AI understands the difference between a cooling tower flush and a pipe failure. It continuously learns your building’s heartbeat, identifying the smallest pinhole leaks before they escalate.</p>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <div class="w-64 h-64 bg-brand-slate rounded-full flex items-center justify-center relative shadow-inner">
-                            <i data-lucide="brain-circuit" class="text-brand-teal w-24 h-24"></i>
-                            <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg border border-slate-100 text-[10px] font-bold">CONTEXT-AWARE</div>
-                        </div>
-                    </div>
+            <div class="lg:w-7/12 reveal delay-200">
+                <div class="bg-brand-slate rounded-[2.5rem] p-6 shadow-inner border border-slate-100 relative group">
+                    <img src="https://raw.githubusercontent.com/investwisekid/mayim/2e4d5b1041d9fecff3b65322f07d5d1fe480fad8/dashboard.png" 
+                         alt="MayimFlow Dashboard" 
+                         class="rounded-[2rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.01]">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sustainability Impact Section -->
-    <section id="impact" class="py-32 px-6 bg-brand-slate">
+    <!-- Solutions -->
+    <section id="solutions" class="py-32 bg-brand-dark text-white rounded-[4rem] mx-4 px-6 reveal">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="reveal">
-                    <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 tracking-tighter">Drive Sustainability <br>at Scale.</h2>
-                    <p class="text-slate-600 text-xl leading-relaxed mb-10">
-                        In 2025, MayimFlow helped our enterprise partners save over 3 billion gallons of water—avoiding thousands of metric tons of carbon emissions. Real-time water data is the missing link in your ESG strategy.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-brand-teal">
-                            <span class="font-bold text-slate-700">Carbon Footprint Avoided</span>
-                            <span class="text-brand-teal font-black text-2xl">42k Metric Tons</span>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-sm flex items-center justify-between border-l-4 border-brand-blue">
-                            <span class="font-bold text-slate-700">Water Damage Loss Averted</span>
-                            <span class="text-brand-blue font-black text-2xl">$1.2B Total</span>
-                        </div>
-                    </div>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tighter italic">Engineered for Resilience.</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto italic font-light">Specific AI models for the world's most critical water environments.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="group bg-slate-800/30 p-10 rounded-[3rem] border border-white/5 hover:border-brand-teal transition-all">
+                    <div class="mb-8 w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center"><i data-lucide="server" class="text-brand-blue w-8 h-8"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 italic">Data Centers</h3>
+                    <p class="text-slate-400 leading-relaxed">Securing liquid cooling and facility loops with 99.9% uptime assurance for AI infrastructure.</p>
                 </div>
-                <div class="grid grid-cols-2 gap-6 reveal delay-200">
-                    <div class="bg-brand-dark p-10 rounded-[2.5rem] text-white flex flex-col justify-between aspect-square">
-                        <i data-lucide="wind" class="text-brand-teal w-12 h-12"></i>
-                        <p class="text-3xl font-bold">ESG Goals Met</p>
-                    </div>
-                    <div class="bg-brand-blue p-10 rounded-[2.5rem] text-white flex flex-col justify-between aspect-square translate-y-12">
-                        <i data-lucide="droplets" class="text-white w-12 h-12"></i>
-                        <p class="text-3xl font-bold">Zero Waste</p>
-                    </div>
+                <div class="group bg-slate-800/30 p-10 rounded-[3rem] border border-white/5 hover:border-brand-teal transition-all">
+                    <div class="mb-8 w-16 h-16 bg-teal-500/10 rounded-2xl flex items-center justify-center"><i data-lucide="building" class="text-brand-teal w-8 h-8"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 italic">Commercial</h3>
+                    <p class="text-slate-400 leading-relaxed">Protecting high-rise assets, lowering insurance premiums, and driving global ESG compliance.</p>
+                </div>
+                <div class="group bg-slate-800/30 p-10 rounded-[3rem] border border-white/5 hover:border-brand-teal transition-all">
+                    <div class="mb-8 w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center"><i data-lucide="factory" class="text-white w-8 h-8"></i></div>
+                    <h3 class="text-2xl font-bold mb-4 italic">Infrastructure</h3>
+                    <p class="text-slate-400 leading-relaxed">Early detection for municipal water mains and treatment plants to prevent catastrophic failures.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Logo Carousel -->
-    <section class="py-24 border-y border-slate-100 overflow-hidden bg-white">
-        <h2 class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mb-12">Empowering Global Infrastructure</h2>
-        <div class="relative flex overflow-hidden">
-            <div class="logo-track">
-                <div class="flex items-center gap-24 px-12 grayscale opacity-30 contrast-125">
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">GLOBALNET</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">DATACORP</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">AQUAVISTA</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">TECHFLOW</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">METRO-INFRA</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">VERIDIAN</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">ORBITAL</span>
+    <!-- Impact Section -->
+    <section id="impact" class="py-32 px-6 bg-brand-slate/50">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+            <div class="lg:w-1/2 reveal">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 tracking-tighter">Driving Global <br><span class="text-brand-blue">Sustainability.</span></h2>
+                <p class="text-slate-600 text-xl leading-relaxed mb-10 italic">
+                    Water usage is the hidden variable in ESG strategy. MayimFlow helps enterprise partners eliminate waste, reducing carbon footprint by thousands of metric tons yearly.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest mb-2 italic">Carbon Avoided</p>
+                        <p class="text-3xl font-black text-brand-dark italic">42k MT</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest mb-2 italic">Zero Waste Target</p>
+                        <p class="text-3xl font-black text-brand-dark italic">Active</p>
+                    </div>
                 </div>
-                <div class="flex items-center gap-24 px-12 grayscale opacity-30 contrast-125">
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">GLOBALNET</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">DATACORP</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">AQUAVISTA</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">TECHFLOW</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">METRO-INFRA</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">VERIDIAN</span>
-                    <span class="text-3xl font-black text-slate-800 tracking-tighter italic">ORBITAL</span>
+            </div>
+            <div class="lg:w-1/2 relative reveal delay-200 flex justify-center">
+                <div class="w-full aspect-square bg-brand-dark rounded-[3rem] p-12 text-white flex flex-col justify-end">
+                    <i data-lucide="wind" class="text-brand-teal w-16 h-16 mb-6"></i>
+                    <p class="text-4xl font-bold italic tracking-tighter">The Future of Infrastructure is Proactive.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="py-40 px-6 text-center">
+    <section id="contact" class="py-40 px-6 text-center">
         <div class="max-w-4xl mx-auto reveal">
-            <h2 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-10 tracking-tighter">Ready to Make Better <br><span class="text-brand-blue">Water Decisions?</span></h2>
+            <h2 class="text-5xl md:text-8xl font-extrabold text-brand-dark mb-10 tracking-tighter italic">Master the <br><span class="text-brand-blue">Flow.</span></h2>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <button class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl transform hover:-translate-y-2">Request Your Demo</button>
+                <button class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
                 <button class="bg-slate-100 text-brand-dark px-14 py-5 rounded-full font-bold text-xl hover:bg-slate-200 transition-all">Contact Sales</button>
             </div>
-            <p class="mt-8 text-slate-400 font-bold text-xs uppercase tracking-widest">Global HQ — Austin, Texas</p>
+            <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Global Enterprise Solutions — Austin, Texas</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6 overflow-hidden relative">
+    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
             <div class="max-w-sm">
                 <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow" class="h-14 w-auto mb-10">
-                <p class="text-slate-400 text-sm leading-relaxed mb-10 italic">Providing mission-critical water intelligence and predictive risk management for the modern built world.</p>
-                <div class="flex gap-8">
+                <p class="text-slate-400 text-sm leading-relaxed mb-10 italic">Advanced water intelligence and predictive risk management for the modern built world.</p>
+                <div class="flex gap-8 text-slate-500">
                     <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-brand-teal transition"></i>
                     <i data-lucide="twitter" class="w-5 h-5 cursor-pointer hover:text-brand-teal transition"></i>
-                    <i data-lucide="instagram" class="w-5 h-5 cursor-pointer hover:text-brand-teal transition"></i>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+            <div class="grid grid-cols-2 gap-16">
                 <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-8">Platform</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold">
-                        <li class="hover:text-brand-teal transition cursor-pointer">Technology</li>
-                        <li class="hover:text-brand-teal transition cursor-pointer">Portal</li>
-                        <li class="hover:text-brand-teal transition cursor-pointer">Mobile App</li>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Platform</h5>
+                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
+                        <li class="cursor-pointer hover:text-brand-teal transition">Technology</li>
+                        <li class="cursor-pointer hover:text-brand-teal transition">Security</li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-8">Solutions</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold">
-                        <li class="hover:text-brand-teal transition cursor-pointer">Commercial</li>
-                        <li class="hover:text-brand-teal transition cursor-pointer">Data Centers</li>
-                        <li class="hover:text-brand-teal transition cursor-pointer">Construction</li>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Solutions</h5>
+                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
+                        <li class="cursor-pointer hover:text-brand-teal transition">Commercial</li>
+                        <li class="cursor-pointer hover:text-brand-teal transition">Data Centers</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-center text-[10px] text-slate-500 font-black uppercase tracking-[0.4em]">
-            © 2025 MayimFlow AI Inc. All Rights Reserved. Built for Resilience.
+        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-center text-[9px] text-slate-600 font-black uppercase tracking-[0.5em]">
+            © 2025 MayimFlow AI Inc. All Rights Reserved. Alumni Giant Engineering.
         </div>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        // Scroll Reveal Logic
+        // Reveal logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -329,16 +305,16 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        // Header Style Change on Scroll
+        // Header Style
         const header = document.getElementById('header');
         const navLinks = document.getElementById('nav-links');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
+                header.classList.add('nav-glass', 'py-4');
                 header.classList.remove('py-6');
                 navLinks.classList.replace('text-white', 'text-slate-600');
             } else {
-                header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-4');
+                header.classList.remove('nav-glass', 'py-4');
                 header.classList.add('py-6');
                 navLinks.classList.replace('text-slate-600', 'text-white');
             }
