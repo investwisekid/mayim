@@ -51,7 +51,7 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
 
-        /* Carousel Animation */
+        /* Carousel Animation - Slower with less gap */
         @keyframes carousel {
             0% {
                 transform: translateX(0);
@@ -68,8 +68,8 @@
 
         .logo-carousel-track {
             display: flex;
-            gap: 4rem;
-            animation: carousel 30s linear infinite;
+            gap: 2rem;
+            animation: carousel 50s linear infinite;
             width: max-content;
         }
 
@@ -144,7 +144,7 @@
 
     <!-- 1. Metrics Bar with Counter Animation -->
     <div class="relative z-30 -mt-16 max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-1 bg-white shadow-2xl rounded-2xl overflow-hidden reveal">
-        <div class="p-8 text-center border-r border-slate-100 metric-item" data-target="25">
+        <div class="p-8 text-center border-r border-slate-100 metric-item" data-target="35">
             <p class="text-brand-blue font-black text-4xl mb-1 counter">0%</p>
             <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Consumption Cut</p>
         </div>
