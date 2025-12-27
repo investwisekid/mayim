@@ -751,10 +751,9 @@
                 <p class="text-2xl text-slate-600 italic font-light max-w-3xl mx-auto mb-12">
                     Interested in backing the future of water intelligence? Share your details and we'll connect with you shortly.
                 </p>
-                <button data-tally-open="ODlMDA" data-tally-emoji-text="📋" data-tally-emoji-animation="tada" class="bg-brand-blue hover:bg-blue-700 text-white px-14 py-6 rounded-full font-bold text-xl shadow-2xl transition-all hover:scale-105">
+                <a href="https://tally.so/r/ODlMDA" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-blue hover:bg-blue-700 text-white px-14 py-6 rounded-full font-bold text-xl shadow-2xl transition-all hover:scale-105">
                     Open Investor Form
-                </button>
-                <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Your information is secure and confidential</p>
+                </a>
             </div>
         </section>
     </div>
@@ -764,7 +763,7 @@
         <section class="min-h-screen bg-white py-32 px-6 pt-32">
             <div class="max-w-7xl mx-auto">
                 <div class="reveal active mb-16">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Meet Our Team</h1>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">About Us</h1>
                     <p class="text-2xl text-slate-600 italic font-light max-w-3xl">
                         A diverse group of engineers, scientists, and visionaries dedicated to solving the world's most pressing water challenges.
                     </p>
@@ -848,14 +847,16 @@
                 <div>
                     <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Company</h5>
                     <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('about')">Team</a></li>
+                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('about')">About Us</a></li>
                         <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('media')">Media</a></li>
+                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener noreferrer">Careers</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Product</h5>
                     <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
                         <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('platform')">Platform</a></li>
+                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('investors')">Investors</a></li>
                     </ul>
                 </div>
             </div>
@@ -909,20 +910,6 @@
             // Show selected page
             document.getElementById(pageName + '-page').classList.remove('page-hidden');
             document.getElementById(pageName + '-page').classList.add('page-visible');
-
-            // If investors page, open Tally form
-            if (pageName === 'investors') {
-                setTimeout(() => {
-                    if (window.Tally) {
-                        window.Tally.openPopup('ODlMDA', {
-                            emoji: {
-                                text: '📋',
-                                animation: 'tada'
-                            }
-                        });
-                    }
-                }, 500);
-            }
 
             window.scrollTo(0, 0);
             lucide.createIcons();
