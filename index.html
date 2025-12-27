@@ -122,6 +122,26 @@
         .page-visible {
             display: block;
         }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Feature Card */
+        .feature-card {
+            padding: 2rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased overflow-x-hidden">
@@ -133,8 +153,7 @@
                 <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow Logo" class="h-14 w-auto drop-shadow-lg">
             </a>
             <div id="nav-links" class="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.25em] text-white">
-                <a href="https://mayimflow-platform.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-teal transition">Platform</a>
-                <a href="#" onclick="showPage('home')" class="hover:text-brand-teal transition">Impact</a>
+                <a href="#" onclick="showPage('platform')" class="hover:text-brand-teal transition">Platform</a>
                 <a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-teal transition">Careers</a>
                 <a href="#" onclick="showPage('media')" class="hover:text-brand-teal transition">Media</a>
                 <a href="#" onclick="showPage('about')" class="hover:text-brand-teal transition">About Us</a>
@@ -170,7 +189,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
-                    <a href="https://mayimflow-platform.com" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center">Explore Platform</a>
+                    <a href="#" onclick="showPage('platform')" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center">Explore Platform</a>
                 </div>
             </div>
         </section>
@@ -259,11 +278,11 @@
             </div>
         </section>
 
-        <!-- 4. Platform Section (Dashboard) -->
-        <section id="platform" class="py-32 px-6">
+        <!-- 4. Dashboard Section -->
+        <section id="dashboard" class="py-32 px-6">
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
                 <div class="lg:w-5/12 reveal">
-                    <h4 class="text-brand-blue font-bold tracking-[0.3em] uppercase text-xs mb-4">The Platform</h4>
+                    <h4 class="text-brand-blue font-bold tracking-[0.3em] uppercase text-xs mb-4">The Dashboard</h4>
                     <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tighter">Real-Time <br>Intelligence.</h2>
                     <p class="text-slate-600 text-lg leading-relaxed mb-8">
                         MayimFlow provides the industry's most advanced water management dashboard. Using a decade of AI training data, our platform translates complex flow patterns into actionable insights for facility leaders.
@@ -279,7 +298,7 @@
                         </div>
                     </div>
                     <div class="mt-8">
-                        <a href="https://mayimflow-platform.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all">Explore Full Platform</a>
+                        <a href="#" onclick="showPage('platform')" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all">Explore Full Platform</a>
                     </div>
                 </div>
                 
@@ -293,7 +312,7 @@
             </div>
         </section>
 
-        <!-- Impact Section -->
+        <!-- Sustainability Section -->
         <section id="impact" class="py-32 px-6 bg-brand-slate/50">
             <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
                 <div class="lg:w-1/2 reveal">
@@ -330,6 +349,185 @@
                     <button class="bg-slate-100 text-brand-dark px-14 py-5 rounded-full font-bold text-xl hover:bg-slate-200 transition-all">Contact Sales</button>
                 </div>
                 <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Global Enterprise Solutions — Silicon Valley, California</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PLATFORM PAGE -->
+    <div id="platform-page" class="page-hidden">
+        <section class="min-h-screen bg-white py-32 px-6 pt-32">
+            <div class="max-w-7xl mx-auto">
+                <!-- Hero Section -->
+                <div class="reveal active mb-20">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Advanced Water Intelligence Platform</h1>
+                    <p class="text-2xl text-slate-600 italic font-light max-w-3xl">
+                        Powered by AI and machine learning, MayimFlow transforms raw water data into predictive intelligence that prevents catastrophic failures before they happen.
+                    </p>
+                </div>
+
+                <!-- Core Features -->
+                <div class="mb-32">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-12">Core Platform Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="brain" class="text-brand-blue w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">AI-Powered Anomaly Detection</h3>
+                            <p class="text-slate-600">Machine learning models trained on decade of water flow data identify unusual patterns and predict failures 24-72 hours in advance.</p>
+                        </div>
+
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="activity" class="text-brand-teal w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Real-Time Monitoring</h3>
+                            <p class="text-slate-600">Continuous stream monitoring with sub-second latency. Track water flow, pressure, temperature, and quality metrics across your entire infrastructure.</p>
+                        </div>
+
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="zap" class="text-brand-blue w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Autonomous Response</h3>
+                            <p class="text-slate-600">Automatic mitigation protocols execute in real-time when risks are detected, minimizing damage and preventing expensive emergency repairs.</p>
+                        </div>
+
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="bar-chart-3" class="text-brand-teal w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Advanced Analytics Dashboard</h3>
+                            <p class="text-slate-600">Intuitive visualizations of complex water systems. Custom reports, trend analysis, and predictive forecasting for facility managers.</p>
+                        </div>
+
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="shield" class="text-brand-blue w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">Enterprise Security</h3>
+                            <p class="text-slate-600">Military-grade encryption, role-based access control, and compliance with HIPAA, SOC 2, and ISO 27001 standards for mission-critical operations.</p>
+                        </div>
+
+                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
+                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
+                                <i data-lucide="link" class="text-brand-teal w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-dark mb-3">API Integration</h3>
+                            <p class="text-slate-600">RESTful APIs and webhooks for seamless integration with existing BMS, SCADA, and IoT systems. White-label options available.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div class="mb-32 bg-brand-dark text-white rounded-[3rem] p-16 reveal">
+                    <h2 class="text-4xl font-bold mb-8">Technology Stack</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <i data-lucide="cpu" class="text-brand-teal w-5 h-5"></i>
+                                Predictive Engine
+                            </h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• LSTM & GRU neural networks for time-series analysis</li>
+                                <li>• Real-time inference at <10ms latency</li>
+                                <li>• Anomaly detection with 98.7% accuracy</li>
+                                <li>• Ensemble learning across multiple models</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                <i data-lucide="cloud" class="text-brand-teal w-5 h-5"></i>
+                                Cloud Infrastructure
+                            </h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Multi-region AWS deployment</li>
+                                <li>• 99.99% uptime SLA</li>
+                                <li>• Auto-scaling to handle 10M+ data points/second</li>
+                                <li>• Real-time data lakehouse architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Solutions -->
+                <div class="mb-32">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-12">Industry-Specific Solutions</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="reveal bg-white border-2 border-brand-blue/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                                <i data-lucide="server" class="text-brand-blue w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Data Centers</h3>
+                            <p class="text-slate-600 mb-4">Liquid cooling system protection with predictive maintenance for AI infrastructure. Prevent downtime that costs $10K+/minute.</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>✓ Immersion cooling monitoring</li>
+                                <li>✓ Facility loop protection</li>
+                                <li>✓ Water quality tracking</li>
+                            </ul>
+                        </div>
+
+                        <div class="reveal bg-white border-2 border-brand-teal/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
+                            <div class="w-16 h-16 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6">
+                                <i data-lucide="building" class="text-brand-teal w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Commercial Real Estate</h3>
+                            <p class="text-slate-600 mb-4">Protect high-value properties from water damage. Lower insurance premiums through predictive risk management.</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>✓ Leak detection & localization</li>
+                                <li>✓ Burst pipe prediction</li>
+                                <li>✓ Insurance integration</li>
+                            </ul>
+                        </div>
+
+                        <div class="reveal bg-white border-2 border-brand-blue/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                                <i data-lucide="factory" class="text-brand-blue w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Municipal Infrastructure</h3>
+                            <p class="text-slate-600 mb-4">Early detection for water mains and treatment plants. Prevent catastrophic public infrastructure failures.</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>✓ Main break prediction</li>
+                                <li>✓ Quality monitoring</li>
+                                <li>✓ Pressure zone analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security & Compliance -->
+                <div class="reveal bg-brand-slate/50 rounded-[2rem] p-16 mb-32">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-8">Security & Compliance</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div>
+                            <i data-lucide="lock" class="text-brand-blue w-8 h-8 mb-4"></i>
+                            <h4 class="font-bold text-brand-dark mb-2">Encryption</h4>
+                            <p class="text-sm text-slate-600">AES-256 at-rest, TLS 1.3 in-transit</p>
+                        </div>
+                        <div>
+                            <i data-lucide="shield" class="text-brand-teal w-8 h-8 mb-4"></i>
+                            <h4 class="font-bold text-brand-dark mb-2">Compliance</h4>
+                            <p class="text-sm text-slate-600">SOC 2 Type II, ISO 27001, GDPR, HIPAA</p>
+                        </div>
+                        <div>
+                            <i data-lucide="check" class="text-brand-blue w-8 h-8 mb-4"></i>
+                            <h4 class="font-bold text-brand-dark mb-2">Access Control</h4>
+                            <p class="text-sm text-slate-600">Role-based permissions, audit logs</p>
+                        </div>
+                        <div>
+                            <i data-lucide="eye" class="text-brand-teal w-8 h-8 mb-4"></i>
+                            <h4 class="font-bold text-brand-dark mb-2">Monitoring</h4>
+                            <p class="text-sm text-slate-600">24/7 intrusion detection, threat response</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center reveal">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6">Ready to Transform Your Water Infrastructure?</h2>
+                    <p class="text-xl text-slate-600 mb-10">Get a personalized demo of the MayimFlow platform</p>
+                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl">Request Platform Demo</button>
+                </div>
             </div>
         </section>
     </div>
@@ -486,17 +684,17 @@
             </div>
             <div class="grid grid-cols-2 gap-16">
                 <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Platform</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="https://mayimflow-platform.com" target="_blank" rel="noopener noreferrer">Explore</a></li>
-                        <li class="cursor-pointer hover:text-brand-teal transition">Security</li>
-                    </ul>
-                </div>
-                <div>
                     <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Company</h5>
                     <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
                         <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('about')">Team</a></li>
                         <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('media')">Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Product</h5>
+                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
+                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('platform')">Platform</a></li>
+                        <li class="cursor-pointer hover:text-brand-teal transition">Security</li>
                     </ul>
                 </div>
             </div>
@@ -537,6 +735,8 @@
         function showPage(pageName) {
             document.getElementById('home-page').classList.add('page-hidden');
             document.getElementById('home-page').classList.remove('page-visible');
+            document.getElementById('platform-page').classList.add('page-hidden');
+            document.getElementById('platform-page').classList.remove('page-visible');
             document.getElementById('media-page').classList.add('page-hidden');
             document.getElementById('media-page').classList.remove('page-visible');
             document.getElementById('about-page').classList.add('page-hidden');
