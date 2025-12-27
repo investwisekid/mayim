@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MayimFlow | Enterprise Water Intelligence & AI Predictive Analytics</title>
     
+    <!-- Tally Embed Script -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
     <!-- UI Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -137,7 +140,7 @@
                 <a href="#" onclick="showPage('media')" class="hover:text-brand-teal transition">Media</a>
                 <a href="#" onclick="showPage('about')" class="hover:text-brand-teal transition">About Us</a>
             </div>
-            <button onclick="openDemoModal()" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
+            <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
                 Request Demo
             </button>
         </nav>
@@ -145,7 +148,7 @@
 
     <!-- Sticky CTA (Shows after scrolling) -->
     <div id="sticky-cta" class="sticky-cta hidden">
-        <button onclick="openDemoModal()" class="bg-brand-blue hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold shadow-2xl transition-all hover:scale-105">
+        <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold shadow-2xl transition-all hover:scale-105">
             Request Demo
         </button>
     </div>
@@ -167,7 +170,7 @@
                     Stop damage and eliminate waste with 24-72 hour predictive intelligence.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button onclick="openDemoModal()" class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
+                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
                     <button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all">Explore Technology</button>
                 </div>
             </div>
@@ -348,7 +351,7 @@
             <div class="max-w-4xl mx-auto reveal">
                 <h2 class="text-5xl md:text-8xl font-extrabold text-brand-dark mb-10 tracking-tighter italic">Master the <br><span class="text-brand-blue">Flow.</span></h2>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <button onclick="openDemoModal()" class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
+                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
                     <button class="bg-slate-100 text-brand-dark px-14 py-5 rounded-full font-bold text-xl hover:bg-slate-200 transition-all">Contact Sales</button>
                 </div>
                 <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Global Enterprise Solutions — Silicon Valley, California</p>
@@ -470,39 +473,6 @@
         </section>
     </div>
 
-    <!-- Demo Modal -->
-    <div id="demo-modal" class="page-hidden fixed inset-0 bg-black/50 z-[200] flex items-center justify-center p-6">
-        <div class="bg-white rounded-3xl max-w-md w-full p-12 relative">
-            <button onclick="closeDemoModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <h2 class="text-3xl font-bold text-brand-dark mb-2">Request a Demo</h2>
-            <p class="text-slate-600 mb-8">See how MayimFlow can protect your infrastructure and reduce water costs by 35%.</p>
-            
-            <form class="space-y-4">
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                    <input type="text" placeholder="John Smith" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:border-brand-blue">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Company Email</label>
-                    <input type="email" placeholder="john@company.com" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:border-brand-blue">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
-                    <input type="text" placeholder="Company Inc." class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:border-brand-blue">
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Job Title</label>
-                    <input type="text" placeholder="Facility Manager" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:border-brand-blue">
-                </div>
-                <button type="submit" class="w-full bg-brand-blue text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-all mt-6">
-                    Schedule Demo
-                </button>
-            </form>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-brand-dark text-white pt-24 pb-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
@@ -540,18 +510,19 @@
     <script>
         lucide.createIcons();
 
-        // Modal Functions
-        function openDemoModal() {
-            document.getElementById('demo-modal').classList.remove('page-hidden');
-            document.getElementById('demo-modal').classList.add('page-visible');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDemoModal() {
-            document.getElementById('demo-modal').classList.add('page-hidden');
-            document.getElementById('demo-modal').classList.remove('page-visible');
-            document.body.style.overflow = 'auto';
-        }
+        // Auto-open Tally popup after 5 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (window.Tally) {
+                    window.Tally.openPopup('Ek5oZA', {
+                        emoji: {
+                            text: '👋',
+                            animation: 'tada'
+                        }
+                    });
+                }
+            }, 5000);
+        });
 
         // Sticky CTA Show/Hide
         window.addEventListener('scroll', () => {
@@ -565,7 +536,6 @@
 
         // Page Navigation
         function showPage(pageName) {
-            // Hide all pages
             document.getElementById('home-page').classList.add('page-hidden');
             document.getElementById('home-page').classList.remove('page-visible');
             document.getElementById('media-page').classList.add('page-hidden');
@@ -573,14 +543,10 @@
             document.getElementById('about-page').classList.add('page-hidden');
             document.getElementById('about-page').classList.remove('page-visible');
 
-            // Show selected page
             document.getElementById(pageName + '-page').classList.remove('page-hidden');
             document.getElementById(pageName + '-page').classList.add('page-visible');
 
-            // Scroll to top
             window.scrollTo(0, 0);
-
-            // Reinitialize lucide icons for new page
             lucide.createIcons();
         }
 
@@ -664,13 +630,6 @@
 
         document.querySelectorAll('.metric-item').forEach(item => {
             metricsObserver.observe(item);
-        });
-
-        // Close modal on outside click
-        document.getElementById('demo-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'demo-modal') {
-                closeDemoModal();
-            }
         });
     </script>
 </body>
