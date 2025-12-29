@@ -873,7 +873,7 @@
     <script>
         lucide.createIcons();
 
-        // Tally for Demo Form (opens in modal)
+        // Tally for Demo Form (opens in modal after 15 seconds)
         window.addEventListener('load', () => {
             setTimeout(() => {
                 if (window.Tally) {
@@ -884,7 +884,7 @@
                         }
                     });
                 }
-            }, 5000);
+            }, 15000);  // ← Changed to 15 seconds (15000 milliseconds)
         });
 
         // Sticky CTA Show/Hide
