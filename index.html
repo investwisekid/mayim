@@ -698,19 +698,53 @@
         </section>
     </div>
 
-    <!-- MEDIA PAGE -->
+    <!-- MEDIA PAGE (UPDATED) -->
     <div id="media-page" class="page-hidden">
         <section class="min-h-screen bg-white py-32 px-6 pt-32">
             <div class="max-w-7xl mx-auto">
                 <div class="reveal active mb-16">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Media & Articles</h1>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Media & Press</h1>
                     <p class="text-2xl text-slate-600 italic font-light max-w-3xl">
                         Stay updated with the latest insights, research, and industry news from the MayimFlow team.
                     </p>
                 </div>
 
-                <!-- Featured Article -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all">
+                <!-- Featured Article 1: TechCrunch -->
+                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Image -->
+                        <div class="h-80 md:h-full overflow-hidden bg-gradient-to-br from-brand-blue to-brand-teal">
+                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/2f7dc8dfd6f0aea5c376a51a5acaf65980d2badc/Techcrunchwinner.png" 
+                                 alt="TechCrunch Disrupt Winner" 
+                                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <!-- Content -->
+                        <div class="p-10 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 mb-4">
+                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Featured Press</span>
+                                    <span class="text-xs text-slate-500">December 2025</span>
+                                </div>
+                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow Wants to Stop Data Center Leaks Before They Happen</h2>
+                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                                    TechCrunch covers how MayimFlow's combination of IoT sensors and edge-deployed machine learning models detect signs of impending leaks, protecting data centers from costly downtime and millions in damage. Founder John Khazraee shares his vision for preventing water disasters across enterprise infrastructure.
+                                </p>
+                                <p class="text-slate-500 text-sm italic mb-6">
+                                    "I really believe in the vision. I believe in the impact that we're making. Water is becoming one of those big issues in our world." — John Khazraee, CEO/Founder
+                                </p>
+                            </div>
+                            <a href="https://techcrunch.com/2025/12/28/mayimflow-wants-to-stop-data-center-leaks-before-they-happen/" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
+                                Read on TechCrunch →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Article 2: Medium -->
+                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
                     <div class="grid md:grid-cols-2 gap-8">
                         <!-- Image -->
                         <div class="h-80 md:h-full overflow-hidden bg-gradient-to-br from-brand-blue to-brand-teal">
@@ -722,7 +756,7 @@
                         <div class="p-10 flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Featured Article</span>
+                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Article</span>
                                     <span class="text-xs text-slate-500">2025</span>
                                 </div>
                                 <h2 class="text-3xl font-bold text-brand-dark mb-4">The Unseen Infrastructure: Why a Water Tech Startup Won TechCrunch Battlefield</h2>
@@ -736,6 +770,28 @@
                                class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
                                 Read on Medium →
                             </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Press Recognition Section -->
+                <div class="mt-20 pt-20 border-t border-slate-200 reveal">
+                    <h3 class="text-3xl font-bold text-brand-dark mb-12 text-center">Recognition & Awards</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
+                            <i data-lucide="award" class="w-12 h-12 text-brand-blue mx-auto mb-4"></i>
+                            <h4 class="text-xl font-bold text-brand-dark mb-2">TechCrunch Disrupt 2025</h4>
+                            <p class="text-slate-600 text-sm">Built World Stage Winner</p>
+                        </div>
+                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
+                            <i data-lucide="award" class="w-12 h-12 text-brand-teal mx-auto mb-4"></i>
+                            <h4 class="text-xl font-bold text-brand-dark mb-2">Google Industry Award</h4>
+                            <p class="text-slate-600 text-sm">2025 Innovation Excellence</p>
+                        </div>
+                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
+                            <i data-lucide="newspaper" class="w-12 h-12 text-brand-blue mx-auto mb-4"></i>
+                            <h4 class="text-xl font-bold text-brand-dark mb-2">Featured in TechCrunch</h4>
+                            <p class="text-slate-600 text-sm">December 2025</p>
                         </div>
                     </div>
                 </div>
@@ -884,7 +940,7 @@
                         }
                     });
                 }
-            }, 15000);  // ← Changed to 15 seconds (15000 milliseconds)
+            }, 15000);  // 15 seconds
         });
 
         // Sticky CTA Show/Hide
