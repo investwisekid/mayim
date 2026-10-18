@@ -46,7 +46,7 @@ assets/
 
 ## Hero video
 
-`index.html` holds `<div class="hero-video" data-youtube="VydpQhBqmp4" data-mp4="">`. `site.js` loads the video one second after the page finishes loading. To self-host (faster, no YouTube scripts), add a short muted loop at `assets/video/hero.mp4` (H.264, about 1–3 MB) and set `data-mp4="/assets/video/hero.mp4"`.
+The home page plays a self-hosted, muted loop: `assets/video/hero-720.mp4` (desktop) and `hero-480.mp4` (phones, under 800px wide). `assets/img/hero-poster.webp` shows until the video starts. `site.js` loads the video one second after the page finishes loading and skips it for visitors with Save-Data or reduced-motion settings. To replace the video, export a muted H.264 MP4 at 1280×720 and 854×480 (keep each under about 5 MB) with the same names.
 
 ## Content rules
 

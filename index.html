@@ -36,7 +36,7 @@
   <script defer src="/assets/js/site.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <link rel="preload" as="image" href="/assets/img/bg-server-racks.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/img/hero-poster.webp" fetchpriority="high">
   <meta name="google-site-verification" content="smaWRufGrFEg3kdjy7SwbaY1-GFXpl4DoXy7g2njvvA">
   <script type="application/ld+json">
   {
@@ -81,13 +81,12 @@
   <main id="main">
     <!-- Hero: background video (YouTube) over a still image fallback -->
     <section class="hero">
-      <!-- Background video loads after the page is ready (see site.js).
-           To self-host: add /assets/video/hero.mp4 and set data-mp4="/assets/video/hero.mp4". -->
-      <div class="hero-video" aria-hidden="true" data-youtube="VydpQhBqmp4" data-mp4=""></div>
+      <!-- Background video (self-hosted MP4, no sound) loads after the page is ready; see site.js. -->
+      <div class="hero-video" aria-hidden="true" data-mp4="/assets/video/hero-720.mp4" data-mp4-small="/assets/video/hero-480.mp4"></div>
       <div class="container">
         <span class="eyebrow">Predictive liquid-risk intelligence</span>
         <h1>Predict liquid failures <em>before they become outages.</em></h1>
-        <p class="lead">MayimFlow learns the normal rhythm of every cooling loop and pipe in AI data centers and critical infrastructure, then flags the abnormal one with 24&ndash;72 hours of warning.</p>
+        <p class="lead">AI that learns how every cooling loop should behave and warns you 24&ndash;72 hours before it fails.</p>
         <div class="btn-row">
           <button type="button" class="btn btn-primary" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
           <a class="btn btn-ghost" href="/platform">See the platform <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
@@ -137,7 +136,7 @@
           <li class="incident-step"><div class="incident-dot" style="background:var(--orange)"></div><span class="incident-time">8:08 pm</span><p>Battery room flooded and on fire</p></li>
           <li class="incident-step"><div class="incident-dot" style="background:var(--red)"></div><span class="incident-time">11:04 pm</span><p>Building shut down</p></li>
         </ol>
-        <div class="callout reveal">Six hours from leak to shutdown. Today&rsquo;s tools alarm after liquid escapes. <strong>Every hour of warning before 4:46&nbsp;pm is time to act.</strong></div>
+        <div class="callout reveal">Six hours from leak to shutdown. <strong>Every hour of warning before 4:46&nbsp;pm is time to act.</strong></div>
         <p class="source" style="margin-top:18px">Sources: <a href="https://status.cloud.google.com/incidents/dS9ps52MUnxQfyDGPfkY" target="_blank" rel="noopener">Google Cloud incident report, europe-west9</a>; <a href="https://www.datacenterdynamics.com/en/news/water-leak-at-paris-global-switch-data-center-causes-fire-leads-to-outages-at-google/" target="_blank" rel="noopener">DCD</a>. Times in US/Pacific.</p>
       </div>
     </section>
@@ -197,7 +196,7 @@
         <div class="reveal">
           <span class="eyebrow">The platform</span>
           <h2>One screen from sensor signal to repair ticket.</h2>
-          <p>Operators see which loop is drifting, how much time is left and what to do next, without digging through raw sensor feeds.</p>
+          <p>See which loop is drifting, how much time is left and what to do next.</p>
           <ul class="check-list" style="margin:24px 0 30px">
             <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>A live risk score for every cooling loop</span></li>
             <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Ranked alerts with a predicted time to failure</span></li>
@@ -219,18 +218,18 @@
         <div class="section-head center reveal">
           <span class="eyebrow">Where we work</span>
           <h2>AI data centers and critical infrastructure.</h2>
-          <p class="lead">Liquid cooling turns every rack row into a plumbing system. The same pressure, flow and vibration physics run through the infrastructure around it.</p>
+          <p class="lead">Liquid cooling turns every rack row into a plumbing system.</p>
         </div>
         <div class="grid grid-2 reveal">
           <div class="card">
             <div class="icon-bubble"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
             <h3>AI data centers</h3>
-            <p>Coolant distribution units, cold plates, immersion tanks and facility water loops, watched continuously so a slow drift never becomes a flooded hall.</p>
+            <p>CDUs, cold plates, immersion tanks and facility water loops, watched around the clock.</p>
           </div>
           <div class="card">
             <div class="icon-bubble teal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></div>
             <h3>Infrastructure</h3>
-            <p>Utilities, hospitals, commercial buildings and industrial sites, where a burst pipe or failing pump means downtime, damage and safety risk.</p>
+            <p>Utilities, hospitals, commercial buildings and industrial sites.</p>
           </div>
         </div>
       </div>
@@ -291,7 +290,7 @@
       <div class="container">
         <div class="cta-band reveal">
           <h2>Every liquid system, predicted.</h2>
-          <p>Starting with AI data centers and extending across critical infrastructure. See what MayimFlow would watch in your facility.</p>
+          <p>See what MayimFlow would watch in your facility.</p>
           <div class="btn-row">
             <button type="button" class="btn btn-light" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
             <a class="btn btn-ghost" href="mailto:info@mayimflow.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@mayimflow.com</a>
