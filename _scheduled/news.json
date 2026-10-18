@@ -1,0 +1,140 @@
+{
+  "note": "Recognition items published by .github/workflows/publish-news.yml on their 'publish' date (UTC).",
+  "items": [
+    {
+      "id": "techstars",
+      "publish": "2026-10-18",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-09\">\n          <div class=\"press-media contain\"><img src=\"/assets/img/logo-techstars.webp\" alt=\"Techstars logo\" loading=\"lazy\" style=\"max-width:260px\"></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Accelerator</span><span class=\"date\">Sep 2026</span></div>\n            <h3>Selected by Techstars: 1 of 57 companies from 16,000+ applicants</h3>\n            <p>MayimFlow joined the Techstars Alabama EnergyTech Accelerator, one of eight energy companies in the Fall 2026 class.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class\" target=\"_blank\" rel=\"noopener\">Read the announcement <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "replace": [
+        [
+          "<p>Accepted into the Techstars Alabama EnergyTech Accelerator</p>",
+          "<p>1 of 57 companies selected from 16,000+ applicants; Alabama EnergyTech Accelerator</p>"
+        ]
+      ],
+      "milestones": [],
+      "published": null
+    },
+    {
+      "id": "stanford-gsb",
+      "publish": "2026-10-27",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-04\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">SOLE Summit</span><span class=\"brand-name\">Stanford GSB</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Speaking</span><span class=\"date\">Apr 2026</span></div>\n            <h3>Stanford GSB: making the case that water is AI infrastructure&rsquo;s next big risk</h3>\n            <p>Interviewed live on stage at the Stanford Graduate School of Business SOLE Summit, in front of founders, investors and ecosystem leaders.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7445492767356735489/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "milestones": [
+        "          <li class=\"rec-item\" data-date=\"2026-04\">\n            <span class=\"rec-date\">Apr 2026</span>\n            <div><h3>Stanford GSB SOLE Summit</h3><p>Interviewed live on stage</p></div>\n            <a class=\"arrow-link small\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7445492767356735489/\" target=\"_blank\" rel=\"noopener\">Source <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>\n          </li>"
+      ],
+      "replace": [],
+      "published": null
+    },
+    {
+      "id": "sxsw-589",
+      "publish": "2026-11-03",
+      "replace": [
+        [
+          "SXSW 2026: First Place Innovative World Technology Winner</h3>",
+          "SXSW Pitch 2026: 589 companies applied. MayimFlow took first place.</h3>"
+        ],
+        [
+          "<p>From Top 5 finalist to first place in Austin.</p>",
+          "<p>Named a Top 5 finalist from 589 companies, then won first place in Innovative World Technology.</p>"
+        ],
+        [
+          "<p>First Place Innovative World Technology Winner</p>",
+          "<p>First Place Innovative World Technology Winner, from 589 applicants</p>"
+        ]
+      ],
+      "cards": [],
+      "milestones": [],
+      "published": null
+    },
+    {
+      "id": "nasdaq",
+      "publish": "2026-11-10",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-07\">\n          <div class=\"press-media\"><img src=\"/assets/img/press-nasdaq-times-square.webp\" alt=\"MayimFlow on the Nasdaq tower in Times Square\" loading=\"lazy\"></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Recognition</span><span class=\"date\">Jul 2026</span></div>\n            <h3>Nasdaq AI Milestone Maker, featured on the Nasdaq tower in Times Square</h3>\n            <p>Chosen by the Nasdaq Entrepreneurial Center for its Summer 2026 AI Milestone Makers, a small cohort of impact founders.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://nasdaqcenter.org/milestone-makers-2026/\" target=\"_blank\" rel=\"noopener\">Learn more <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "replace": [
+        [
+          "<p>Milestone Makers graduate</p>",
+          "<p>Summer 2026 AI Milestone Makers; featured in Times Square</p>"
+        ]
+      ],
+      "milestones": [],
+      "published": null
+    },
+    {
+      "id": "bay-angels",
+      "publish": "2026-11-17",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-03\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">Investor showcase</span><span class=\"brand-name\">Bay Angels</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Investors</span><span class=\"date\">Mar 2026</span></div>\n            <h3>Bay Angels: 1 of 4 companies chosen to present to Bay Area investors</h3>\n            <p>Selected from 50+ submissions to present on liquid-cooling risk in AI data centers.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7442235037804208128/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "milestones": [
+        "          <li class=\"rec-item\" data-date=\"2026-03\">\n            <span class=\"rec-date\">Mar 2026</span>\n            <div><h3>Bay Angels</h3><p>1 of 4 companies selected to present, from 50+</p></div>\n            <a class=\"arrow-link small\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7442235037804208128/\" target=\"_blank\" rel=\"noopener\">Source <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>\n          </li>"
+      ],
+      "replace": [],
+      "published": null
+    },
+    {
+      "id": "aws-cal-poly",
+      "publish": "2026-11-24",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-08\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">Build week</span><span class=\"brand-name\">AWS &times; Cal Poly</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Engineering</span><span class=\"date\">Aug 2026</span></div>\n            <h3>AWS &times; Cal Poly build week: 2nd place out of 16 teams</h3>\n            <p>1,200+ people applied and 100 were selected to form 16 teams. MayimFlow&rsquo;s team took 2nd place after five days of building.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7492976880686542848/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "milestones": [
+        "          <li class=\"rec-item\" data-date=\"2026-08\">\n            <span class=\"rec-date\">Aug 2026</span>\n            <div><h3>AWS &times; Cal Poly</h3><p>2nd place of 16 teams, from 1,200+ applicants</p></div>\n            <a class=\"arrow-link small\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7492976880686542848/\" target=\"_blank\" rel=\"noopener\">Source <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>\n          </li>"
+      ],
+      "replace": [],
+      "published": null
+    },
+    {
+      "id": "foundercast",
+      "publish": "2026-12-01",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-05\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">Podcast</span><span class=\"brand-name\">Foundercast</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Podcast</span><span class=\"date\">May 2026</span></div>\n            <h3>Foundercast: why operators can&rsquo;t afford surprise water damage</h3>\n            <p>John Khazraee joins Shawn Flynn of SVH Capital to talk about predicting water damage and waste before it causes downtime.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7459988334132637696/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "milestones": [
+        "          <li class=\"rec-item\" data-date=\"2026-05\">\n            <span class=\"rec-date\">May 2026</span>\n            <div><h3>Foundercast podcast</h3><p>Guest episode with Shawn Flynn, SVH Capital</p></div>\n            <a class=\"arrow-link small\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7459988334132637696/\" target=\"_blank\" rel=\"noopener\">Source <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>\n          </li>"
+      ],
+      "replace": [],
+      "published": null
+    },
+    {
+      "id": "plug-and-play-talk",
+      "publish": "2026-12-08",
+      "cards": [
+        "        <article class=\"press-card reveal\" data-date=\"2026-07\">\n          <div class=\"press-media\"><img src=\"/assets/img/press-plug-and-play-2026.webp\" alt=\"John Khazraee presenting MayimFlow at Plug and Play\" loading=\"lazy\" style=\"object-position:85% center\"></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Speaking</span><span class=\"date\">Jul 2026</span></div>\n            <h3>Plug and Play: briefing 100+ investors and operators on data center leak risk</h3>\n            <p>Why a small, undetected leak can become a major data-center failure as AI racks move to liquid cooling.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7487899679528165377/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+      ],
+      "replace": [
+        [
+          "<p>AI for Physical Industries</p>",
+          "<p>1 of 32 startups selected for AI for Physical Industries</p>"
+        ]
+      ],
+      "milestones": [],
+      "published": null
+    },
+    {
+      "id": "summerfest-keynote",
+      "publish": "2026-12-15",
+      "replace": [
+        [
+          "Top 5 Global Track finalist at Summerfest TechAI 2026</h3>",
+          "Summerfest TechAI 2026: Top 5 global finalist and keynote speaker</h3>"
+        ],
+        [
+          "<p>Selected as a finalist and featured speaker in Milwaukee.</p>",
+          "<p>Named one of five global finalists and delivered a keynote in Milwaukee.</p>"
+        ],
+        [
+          "<p>Top 5 Global finalist and featured speaker</p>",
+          "<p>Top 5 Global finalist and keynote speaker</p>"
+        ]
+      ],
+      "cards": [],
+      "milestones": [],
+      "published": null
+    }
+  ]
+}
