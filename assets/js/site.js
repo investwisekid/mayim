@@ -18,6 +18,13 @@
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
+  // Tally popups pass extra data-* attributes as hidden fields,
+  // so tag each "Request a demo" button with the page it sits on.
+  var page = location.pathname.replace(/^\/+|\/+$/g, '') || 'home';
+  document.querySelectorAll('[data-tally-open]').forEach(function (b) {
+    if (!b.dataset.source) b.dataset.source = page;
+  });
+
   // Mobile menu
   function closeMenu() {
     if (!links || !toggle) return;
