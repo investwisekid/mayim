@@ -66,7 +66,8 @@
         var v = document.createElement('video');
         v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true;
         v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.preload = 'auto'; v.src = hv.dataset.mp4;
+        v.preload = 'auto';
+        v.src = (hv.dataset.mp4Small && window.innerWidth < 800) ? hv.dataset.mp4Small : hv.dataset.mp4;
         v.addEventListener('playing', function () { hv.classList.add('is-ready'); });
         hv.appendChild(v);
         var p = v.play(); if (p && p.catch) p.catch(function () {});
