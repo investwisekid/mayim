@@ -44,6 +44,10 @@ assets/
 5. After it's live, use Search Console's URL Inspection to request indexing.
 6. If you also post it on Medium or LinkedIn, publish here first and use Medium's "Import a story" so it points back to this page.
 
+## Scheduled news (Recognition page)
+
+New "In the news" items are queued in `_scheduled/news.json`, each with a `publish` date. A GitHub Action (`.github/workflows/publish-news.yml`) runs daily at 9 am Central and adds any item whose date has arrived to `recognition.html` (cards newest first, milestones oldest first), then commits, and Vercel deploys. To change timing, edit the `publish` dates; to publish one now, run the workflow from the repo's Actions tab. `_scheduled/` and `.github/` are not deployed (see `.vercelignore`).
+
 ## Hero video
 
 The home page plays a self-hosted, muted loop: `assets/video/hero-720.mp4` (desktop) and `hero-480.mp4` (phones, under 800px wide). `assets/img/hero-poster.webp` shows until the video starts. `site.js` loads the video one second after the page finishes loading and skips it for visitors with Save-Data or reduced-motion settings. To replace the video, export a muted H.264 MP4 at 1280×720 and 854×480 (keep each under about 5 MB) with the same names.
