@@ -555,3 +555,12 @@ figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 14px; }
 .sources a { color: var(--text); }
 
 @media (max-width: 1100px) and (min-width: 921px) { .nav-links { gap: 18px; } .nav-links a { letter-spacing: 0.1em; } }
+
+/* Press card without a photo: navy panel with the organization name */
+.press-list .press-card + .press-card { margin-top: 28px; }
+.press-media.brand {
+  flex-direction: column; gap: 10px; padding: 32px; text-align: center; color: var(--white);
+  background: linear-gradient(135deg, var(--navy) 0%, #12305a 100%);
+}
+.press-media.brand .brand-sub { color: var(--teal); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.press-media.brand .brand-name { font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
