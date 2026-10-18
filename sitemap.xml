@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.mayimflow.com/</loc></url>
-  <url><loc>https://www.mayimflow.com/platform</loc></url>
-  <url><loc>https://www.mayimflow.com/recognition</loc></url>
-  <url><loc>https://www.mayimflow.com/team</loc></url>
-  <url><loc>https://www.mayimflow.com/investors</loc></url>
+  <url><loc>https://www.mayimflow.com/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/platform</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/insights</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/insights/leak-detection-vs-leak-prediction</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/insights/google-cloud-paris-outage-water-leak</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/insights/liquid-cooling-risk-checklist</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/recognition</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/team</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://www.mayimflow.com/investors</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>

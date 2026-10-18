@@ -14,13 +14,13 @@
   <meta property="og:url" content="https://www.mayimflow.com/platform">
   <meta property="og:title" content="Platform | MayimFlow">
   <meta property="og:description" content="How MayimFlow works: sensors or existing BMS/SCADA data, AI that learns each loop's normal rhythm, and ranked alerts and repair tickets before liquid failures happen.">
-  <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-image.jpg">
+  <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-platform.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Platform | MayimFlow">
   <meta name="twitter:description" content="How MayimFlow works: sensors or existing BMS/SCADA data, AI that learns each loop's normal rhythm, and ranked alerts and repair tickets before liquid failures happen.">
-  <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-image.jpg">
+  <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-platform.jpg">
 
   <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
@@ -36,6 +36,70 @@
   <script defer src="/assets/js/site.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does MayimFlow do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MayimFlow predicts liquid failures such as leaks, failing seals and pump problems in AI data center cooling loops and critical infrastructure. It learns each system's normal pressure, flow, vibration and water-chemistry patterns and flags abnormal behavior with 24–72 hours of warning, so teams can repair in a planned window."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is MayimFlow different from leak detection cables and spot sensors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Leak detection cables, spot sensors and shutoff valves react after liquid has already escaped. MayimFlow looks for the early signs that come before a leak, such as pressure drops, flow changes and rising vibration, so the problem can be fixed before there is water on the floor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sensors or data does MayimFlow need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MayimFlow is hardware-agnostic. It can start with the BMS, SCADA and DCIM data you already collect, then add clip-on sensors for vibration, pressure, ultrasonic flow, conductivity, pH or thermal imaging where there are gaps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MayimFlow control our cooling equipment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MayimFlow starts read-only, so nothing in your control systems changes until your team decides it should."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a deployment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical deployment takes 2–4 weeks from kickoff to live monitoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which liquid-cooling systems does MayimFlow support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MayimFlow is built for liquid cooling, including coolant distribution units (CDUs), direct-to-chip cold plates, immersion cooling and facility water loops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is MayimFlow only for data centers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI data centers come first. The same pressure, flow and vibration physics apply to utilities, hospitals, commercial buildings and manufacturing sites, which MayimFlow also supports."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -49,6 +113,7 @@
       <nav class="nav" aria-label="Main">
         <ul class="nav-links" id="nav-links">
         <li><a href="/platform" aria-current="page">Platform</a></li>
+        <li><a href="/insights">Insights</a></li>
         <li><a href="/recognition">Recognition</a></li>
         <li><a href="/team">Team</a></li>
         <li><a href="/investors">Investors</a></li>
@@ -196,7 +261,25 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details class="faq-item"><summary>What does MayimFlow do?</summary><p>MayimFlow predicts liquid failures such as leaks, failing seals and pump problems in AI data center cooling loops and critical infrastructure. It learns each system&#x27;s normal pressure, flow, vibration and water-chemistry patterns and flags abnormal behavior with 24–72 hours of warning, so teams can repair in a planned window.</p></details>
+          <details class="faq-item"><summary>How is MayimFlow different from leak detection cables and spot sensors?</summary><p>Leak detection cables, spot sensors and shutoff valves react after liquid has already escaped. MayimFlow looks for the early signs that come before a leak, such as pressure drops, flow changes and rising vibration, so the problem can be fixed before there is water on the floor.</p></details>
+          <details class="faq-item"><summary>What sensors or data does MayimFlow need?</summary><p>MayimFlow is hardware-agnostic. It can start with the BMS, SCADA and DCIM data you already collect, then add clip-on sensors for vibration, pressure, ultrasonic flow, conductivity, pH or thermal imaging where there are gaps.</p></details>
+          <details class="faq-item"><summary>Does MayimFlow control our cooling equipment?</summary><p>No. MayimFlow starts read-only, so nothing in your control systems changes until your team decides it should.</p></details>
+          <details class="faq-item"><summary>How long does a deployment take?</summary><p>A typical deployment takes 2–4 weeks from kickoff to live monitoring.</p></details>
+          <details class="faq-item"><summary>Which liquid-cooling systems does MayimFlow support?</summary><p>MayimFlow is built for liquid cooling, including coolant distribution units (CDUs), direct-to-chip cold plates, immersion cooling and facility water loops.</p></details>
+          <details class="faq-item"><summary>Is MayimFlow only for data centers?</summary><p>AI data centers come first. The same pressure, flow and vibration physics apply to utilities, hospitals, commercial buildings and manufacturing sites, which MayimFlow also supports.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
       <div class="container">
         <div class="cta-band reveal">
           <h2>See it on your loops.</h2>
@@ -232,6 +315,7 @@
         <div>
           <h4>Company</h4>
           <ul>
+            <li><a href="/insights">Insights</a></li>
             <li><a href="/team">Team</a></li>
             <li><a href="/recognition">Recognition</a></li>
             <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
