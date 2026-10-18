@@ -1,1175 +1,347 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MayimFlow - Enterprise water intelligence and AI predictive analytics for data centers, commercial real estate, and municipal infrastructure.">
-    <meta name="keywords" content="water management, AI, predictive analytics, data center cooling, water leak detection, infrastructure">
-    <meta name="author" content="MayimFlow">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mayimflow.com/">
-    <meta property="og:title" content="MayimFlow | Enterprise Water Intelligence & AI Predictive Analytics">
-    <meta property="og:description" content="Autonomous AI-powered water management for enterprise infrastructure. Stop damage and eliminate waste with 24-72 hour predictive intelligence.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png">
-    
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mayimflow.com/">
-    <meta property="twitter:title" content="MayimFlow | Enterprise Water Intelligence">
-    <meta property="twitter:description" content="AI-powered water management for enterprise infrastructure.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://mayimflow.com/">
-    
-    <title>MayimFlow | Enterprise Water Intelligence & AI Predictive Analytics</title>
-    
-    <!-- Tally Embed Script -->
-    <script async src="https://tally.so/widgets/embed.js"></script>
-    
-    <!-- UI Frameworks -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Vercel Web Analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MayimFlow | Predict liquid failures before they become outages</title>
+  <meta name="description" content="MayimFlow is predictive liquid-risk intelligence for AI data centers and infrastructure. It learns each cooling loop's normal rhythm and flags failures 24–72 hours before they happen.">
+  <link rel="canonical" href="https://www.mayimflow.com/">
+  <meta name="theme-color" content="#0B1222">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#0066CC',
-                            teal: '#00A8E8',
-                            dark: '#0B1222',
-                            slate: '#F1F5F9'
-                        }
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MayimFlow">
+  <meta property="og:url" content="https://www.mayimflow.com/">
+  <meta property="og:title" content="MayimFlow | Predict liquid failures before they become outages">
+  <meta property="og:description" content="MayimFlow is predictive liquid-risk intelligence for AI data centers and infrastructure. It learns each cooling loop's normal rhythm and flags failures 24–72 hours before they happen.">
+  <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MayimFlow | Predict liquid failures before they become outages">
+  <meta name="twitter:description" content="MayimFlow is predictive liquid-risk intelligence for AI data centers and infrastructure. It learns each cooling loop's normal rhythm and flags failures 24–72 hours before they happen.">
+  <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-image.jpg">
 
-    <style>
-        /* MayimFlow Hero Video */
-        .hero-video-wrapper {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;
-            background: rgba(11, 18, 34, 0.85);
-        }
-        .hero-video-wrapper iframe {
-            width: 100%; height: 100%; position: absolute; top: 0; left: 0;
-            object-fit: cover;
-        }
-        .video-overlay { background: rgba(11, 18, 34, 0.55); position: absolute; inset: 0; z-index: 10; }
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
-        /* Smooth Reveal Transitions */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-200 { transition-delay: 200ms; }
+  <!-- Fonts and styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
-        .nav-glass {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        }
-
-        /* Sticky CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 50;
-            animation: slideUp 0.6s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Carousel Animation */
-        @keyframes carousel {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-100% - 4rem));
-            }
-        }
-
-        .logo-carousel-container {
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .logo-carousel-track {
-            display: flex;
-            gap: 4rem;
-            animation: carousel 60s linear infinite;
-            width: max-content;
-        }
-
-        .logo-carousel-track:hover {
-            animation-play-state: paused;
-        }
-
-        .logo-carousel-item {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: max-content;
-        }
-
-        /* Counter Animation */
-        .counter {
-            font-feature-settings: "tnum";
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* Page Visibility */
-        .page-hidden {
-            display: none;
-        }
-
-        .page-visible {
-            display: block;
-        }
-
-        /* Feature Grid */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Feature Card */
-        .feature-card {
-            padding: 2rem;
-            border-radius: 1.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+  <!-- Scripts: site behavior, Tally forms, Vercel analytics -->
+  <script defer src="/assets/js/site.js"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MayimFlow",
+    "legalName": "MayimFlow AI Inc.",
+    "url": "https://www.mayimflow.com/",
+    "logo": "https://www.mayimflow.com/assets/img/icon-512.png",
+    "description": "Predictive liquid-risk intelligence for AI data centers and infrastructure.",
+    "email": "info@mayimflow.com",
+    "founder": { "@type": "Person", "name": "John Khazraee" },
+    "sameAs": ["https://www.linkedin.com/company/mayimflow"]
+  }
+  </script>
 </head>
-<body class="bg-white text-slate-900 antialiased overflow-x-hidden">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navbar -->
-    <header id="header" class="fixed top-0 w-full z-[100] transition-all duration-300 py-6">
-        <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#" onclick="showPage('home')" class="flex items-center cursor-pointer">
-                <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow Logo" class="h-14 w-auto drop-shadow-lg">
-            </a>
-            <div id="nav-links" class="hidden md:flex items-center gap-10 text-[11px] font-bold uppercase tracking-[0.25em] text-white">
-                <a href="#" onclick="showPage('platform')" class="hover:text-brand-teal transition">Platform</a>
-                <a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener noreferrer" class="hover:text-brand-teal transition">Careers</a>
-                <a href="#" onclick="showPage('media')" class="hover:text-brand-teal transition">Media</a>
-                <a href="#" onclick="showPage('investors')" class="hover:text-brand-teal transition">Investors</a>
-                <a href="#" onclick="showPage('about')" class="hover:text-brand-teal transition">About Us</a>
-            </div>
-            <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3 rounded-full text-sm font-bold shadow-xl transition-all hover:-translate-y-0.5">
-                Request Demo
-            </button>
-        </nav>
-    </header>
-
-    <!-- Sticky CTA (Shows after scrolling) -->
-    <div id="sticky-cta" class="sticky-cta hidden">
-        <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold shadow-2xl transition-all hover:scale-105">
-            Request Demo
-        </button>
+  <header class="site-header" data-transparent="true">
+    <div class="container">
+      <a class="brand" href="/" aria-label="MayimFlow home">
+        <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+        <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+        <li><a href="/platform">Platform</a></li>
+        <li><a href="/recognition">Recognition</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/investors">Investors</a></li>
+        <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+        <li class="mobile-cta"><button type="button" class="btn btn-primary" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button></li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-sm" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
+        <button type="button" class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+      </nav>
     </div>
+  </header>
 
-    <!-- HOME PAGE -->
-    <div id="home-page" class="page-visible">
-        <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center text-center px-6 bg-brand-dark overflow-hidden">
-            <div class="hero-video-wrapper">
-                <iframe src="https://www.youtube.com/embed/VydpQhBqmp4?autoplay=1&mute=1&loop=1&playlist=VydpQhBqmp4&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="object-fit: cover;"></iframe>
-            </div>
-            <div class="video-overlay"></div>
-            <div class="relative z-20 max-w-5xl reveal active">
-                <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-6 tracking-tighter leading-[1.05]">
-                    Mastering the <br><span class="text-brand-teal italic">Flow of Water.</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-200 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
-                    Autonomous AI-powered water management for enterprise infrastructure. 
-                    Stop damage and eliminate waste with 24-72 hour predictive intelligence.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="w-full sm:w-auto bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl">Request Demo</button>
-                    <a href="#" onclick="showPage('platform')" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center">Explore Platform</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 1. Metrics Bar with Counter Animation -->
-        <div class="relative z-30 -mt-16 max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-1 bg-white shadow-2xl rounded-2xl overflow-hidden reveal">
-            <div class="p-8 text-center border-r border-slate-100 metric-item" data-target="35">
-                <p class="text-brand-blue font-black text-4xl mb-1 counter">0%</p>
-                <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Consumption Cut</p>
-            </div>
-            <div class="p-8 text-center border-r border-slate-100 metric-item" data-target="10000">
-                <p class="text-brand-teal font-black text-4xl mb-1 counter">0</p>
-                <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Leaks Prevented</p>
-            </div>
-            <div class="p-8 text-center border-r border-slate-100 metric-item" data-target="24">
-                <p class="text-brand-blue font-black text-4xl mb-1 counter">0M</p>
-                <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">Damage Averted</p>
-            </div>
-            <div class="p-8 text-center metric-item" data-target="99.9999">
-                <p class="text-brand-teal font-black text-4xl mb-1 counter">0%</p>
-                <p class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">System Uptime</p>
-            </div>
+  <main id="main">
+    <!-- Hero: background video (YouTube) over a still image fallback -->
+    <section class="hero">
+      <div class="hero-video" aria-hidden="true">
+        <iframe src="https://www.youtube-nocookie.com/embed/VydpQhBqmp4?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=VydpQhBqmp4&amp;controls=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3"
+                title="MayimFlow background video" tabindex="-1" allow="autoplay; encrypted-media"></iframe>
+      </div>
+      <div class="container">
+        <span class="eyebrow">Predictive liquid-risk intelligence</span>
+        <h1>Predict liquid failures <em>before they become outages.</em></h1>
+        <p class="lead">MayimFlow learns the normal rhythm of every cooling loop and pipe in AI data centers and critical infrastructure, then flags the abnormal one with 24&ndash;72 hours of warning.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
+          <a class="btn btn-ghost" href="/platform">See the platform <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
-
-        <!-- 2. Alumni Logo Section with Carousel -->
-        <section class="py-20 overflow-hidden bg-white">
-            <h2 class="text-center text-[11px] font-bold text-slate-500 uppercase tracking-[0.4em] mb-12 italic">Built in Silicon Valley. Alumni of Industry Giants</h2>
-            <div class="relative flex overflow-hidden border-y border-slate-50 py-12">
-                <div class="logo-carousel-container">
-                    <div class="logo-carousel-track">
-                        <!-- IBM Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- MIT Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/mit.png" alt="MIT Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- Oracle Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/Oracle-Logo-PNG-Image.webp" alt="Oracle Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- Harvard Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/harvard-removebg-preview.png" alt="Harvard Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- Microsoft Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/microsoft-removebg-preview.png" alt="Microsoft Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- Cornell Logo -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/602215274d53bbc492a3c56171847643f1c7a074/cornell.gif" alt="Cornell Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-
-                        <!-- IBM Logo (Duplicate for seamless loop) -->
-                        <div class="logo-carousel-item">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/ibm.png" alt="IBM Logo" class="h-40 w-auto object-contain hover:scale-110 transition-all duration-300">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Award Section (UPDATED WITH TRANSPARENT SXSW LOGO) -->
-        <section class="py-12 bg-brand-slate/30 border-b border-slate-100 reveal">
-            <div class="max-w-4xl mx-auto text-center px-6">
-                <div class="inline-flex items-center gap-2 mb-6">
-                    <i data-lucide="award" class="text-brand-teal w-5 h-5"></i>
-                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-brand-blue">Excellence in Innovation</span>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4 tracking-tight">Winner of the 2025 TechCrunch Google Industry Award</h3>
-                <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-8 tracking-tight">Winner of the 2026 SXSW Innovative Technology Award</h3>
-                <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                    <div class="flex flex-col items-center hover:scale-110 transition-all duration-300">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/b9638c25a03fc6a719417179dc91d41da91e6490/techcrunch-logo-1024x346.png" alt="TechCrunch Logo" class="h-20 w-auto object-contain">
-                    </div>
-                    <div class="flex items-center gap-1 hover:scale-110 transition-all duration-300">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/3fc2c9ceec9eb267564f76706fcd0f524268d92b/google-logo-transparent.png" alt="Google Logo" class="h-20 w-auto object-contain">
-                    </div>
-                    <div class="flex items-center gap-1 hover:scale-110 transition-all duration-300">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/81e4d7327236350dc0db57fe3aadef9a1422eab8/sxsw%20transparent.png" alt="SXSW Logo" class="h-20 w-auto object-contain">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Dashboard Section -->
-        <section id="dashboard" class="py-32 px-6">
-            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-                <div class="lg:w-5/12 reveal">
-                    <h4 class="text-brand-blue font-bold tracking-[0.3em] uppercase text-xs mb-4">The Dashboard</h4>
-                    <h2 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-8 leading-tight tracking-tighter">Real-Time <br>Intelligence.</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                        MayimFlow provides the industry's most advanced water management dashboard. Using a decade of AI training data, our platform translates complex flow patterns into actionable insights for facility leaders.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="check-circle-2" class="text-brand-teal w-6 h-6"></i>
-                            <p class="font-bold text-slate-700 italic">Advanced Anomaly Detection</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="check-circle-2" class="text-brand-blue w-6 h-6"></i>
-                            <p class="font-bold text-slate-700 italic">Autonomous Mitigation Protocols</p>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <a href="#" onclick="showPage('platform')" class="inline-block bg-brand-blue text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition-all">Explore Full Platform</a>
-                    </div>
-                </div>
-                
-                <div class="lg:w-7/12 reveal delay-200">
-                    <div class="bg-brand-slate rounded-[2.5rem] p-12 shadow-inner border border-slate-100 relative group overflow-hidden min-h-96 flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/2e4d5b1041d9fecff3b65322f07d5d1fe480fad8/dashboard.png" 
-                             alt="MayimFlow Dashboard" 
-                             class="rounded-[2rem] shadow-2xl transition-transform duration-700 group-hover:scale-105 max-w-full max-h-full w-auto h-auto object-contain p-4">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sustainability Section - REDESIGNED -->
-        <section id="impact" class="py-32 px-6 bg-gradient-to-br from-brand-slate/50 via-white to-brand-slate/30">
-            <div class="max-w-7xl mx-auto">
-                <!-- Main Hero -->
-                <div class="mb-20 reveal">
-                    <div class="inline-flex items-center gap-2 mb-6">
-                        <i data-lucide="leaf" class="text-brand-teal w-5 h-5"></i>
-                        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-brand-teal">Investor & Enterprise Value</span>
-                    </div>
-                    <h2 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">The Business Case for <br><span class="text-brand-blue">Intelligent Water Management</span></h2>
-                    <p class="text-xl text-slate-600 max-w-3xl leading-relaxed italic">
-                        Water management is no longer just environmental—it's a financial imperative. Fortune 500 companies are losing $12B annually to water-related infrastructure failures. MayimFlow transforms this risk into competitive advantage.
-                    </p>
-                </div>
-
-                <!-- Three-Column Value Propositions -->
-                <div class="grid md:grid-cols-3 gap-8 mb-20 reveal">
-                    <!-- Column 1: Financial ROI -->
-                    <div class="bg-white rounded-[2rem] p-8 border-2 border-brand-blue/20 hover:shadow-xl transition-all">
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="trending-up" class="text-brand-blue w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-brand-dark mb-4">Financial ROI</h3>
-                        <ul class="space-y-3 text-slate-600 mb-6">
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>35% reduction</strong> in water operating costs within 12 months</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>Prevent $10M+ in damage</strong> from single water event</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>Insurance premium reductions</strong> up to 20%</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>Payback period:</strong> 18-24 months</span>
-                            </li>
-                        </ul>
-                        <p class="text-sm text-slate-500 italic">Based on enterprise deployments across data centers & commercial real estate</p>
-                    </div>
-
-                    <!-- Column 2: ESG & Compliance -->
-                    <div class="bg-white rounded-[2rem] p-8 border-2 border-brand-teal/20 hover:shadow-xl transition-all">
-                        <div class="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="target" class="text-brand-teal w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-brand-dark mb-4">ESG & Regulatory</h3>
-                        <ul class="space-y-3 text-slate-600 mb-6">
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-teal font-bold mt-1">✓</span>
-                                <span><strong>Meet SEC climate disclosure</strong> requirements (S-1, 10-K)</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-teal font-bold mt-1">✓</span>
-                                <span><strong>LEED, WELL, BREEAM</strong> certification support</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-teal font-bold mt-1">✓</span>
-                                <span><strong>SBTi-aligned</strong> emissions reduction targets</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-teal font-bold mt-1">✓</span>
-                                <span><strong>Investor confidence:</strong> 62% higher valuations</span>
-                            </li>
-                        </ul>
-                        <p class="text-sm text-slate-500 italic">Enterprises with strong ESG metrics command premium multiples</p>
-                    </div>
-
-                    <!-- Column 3: Risk Mitigation -->
-                    <div class="bg-white rounded-[2rem] p-8 border-2 border-brand-blue/20 hover:shadow-xl transition-all">
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="shield-check" class="text-brand-blue w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-brand-dark mb-4">Risk Mitigation</h3>
-                        <ul class="space-y-3 text-slate-600 mb-6">
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>99.99% uptime</strong> protection for critical infrastructure</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>24-72 hour predictive warnings</strong> prevent catastrophic failures</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>Water scarcity resilience</strong> in drought-prone regions</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-brand-blue font-bold mt-1">✓</span>
-                                <span><strong>Reduce operational risk</strong> by 85%</span>
-                            </li>
-                        </ul>
-                        <p class="text-sm text-slate-500 italic">Critical for data centers, pharmaceuticals, semiconductors</p>
-                    </div>
-                </div>
-
-                <!-- Impact Grid by Industry -->
-                <div class="mb-20 reveal">
-                    <h3 class="text-3xl font-bold text-brand-dark mb-12 text-center">Real-World Impact by Sector</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <!-- Data Centers -->
-                        <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-[2rem] p-8 border border-brand-blue/30">
-                            <div class="flex items-center gap-3 mb-6">
-                                <i data-lucide="server" class="text-brand-blue w-6 h-6"></i>
-                                <h4 class="text-xl font-bold text-brand-dark">Data Centers</h4>
-                            </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Annual Water Savings</p>
-                                    <p class="text-3xl font-bold text-brand-blue">$2.8M</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Downtime Prevented</p>
-                                    <p class="text-3xl font-bold text-brand-blue">99.99%</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Cooling Loop Protection</p>
-                                    <p class="text-lg font-bold text-brand-dark">Immersion & Traditional</p>
-                                </div>
-                                <p class="text-xs text-slate-600 italic pt-4 border-t border-brand-blue/20">Typical 500-rack facility | AI workload demand increasing</p>
-                            </div>
-                        </div>
-
-                        <!-- Commercial Real Estate -->
-                        <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-[2rem] p-8 border border-brand-teal/30">
-                            <div class="flex items-center gap-3 mb-6">
-                                <i data-lucide="building-2" class="text-brand-teal w-6 h-6"></i>
-                                <h4 class="text-xl font-bold text-brand-dark">Commercial RE</h4>
-                            </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Damage Prevention</p>
-                                    <p class="text-3xl font-bold text-brand-teal">$8.5M</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Insurance Savings</p>
-                                    <p class="text-3xl font-bold text-brand-teal">18-20%</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Tenant Retention</p>
-                                    <p class="text-lg font-bold text-brand-dark">+15% satisfaction</p>
-                                </div>
-                                <p class="text-xs text-slate-600 italic pt-4 border-t border-brand-teal/20">Multi-million dollar assets protected | Peace of mind</p>
-                            </div>
-                        </div>
-
-                        <!-- Municipal -->
-                        <div class="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-[2rem] p-8 border border-brand-dark/20">
-                            <div class="flex items-center gap-3 mb-6">
-                                <i data-lucide="map" class="text-brand-dark w-6 h-6"></i>
-                                <h4 class="text-xl font-bold text-brand-dark">Municipal</h4>
-                            </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Main Break Prevention</p>
-                                    <p class="text-3xl font-bold text-brand-dark">$15-40M</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Non-Revenue Water</p>
-                                    <p class="text-3xl font-bold text-brand-dark">25-35%</p>
-                                </div>
-                                <div>
-                                    <p class="text-sm text-slate-600 mb-1">Public Health Impact</p>
-                                    <p class="text-lg font-bold text-brand-dark">Critical</p>
-                                </div>
-                                <p class="text-xs text-slate-600 italic pt-4 border-t border-brand-dark/20">1.5T gallons lost annually | Billions in infrastructure risk</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Closing CTA with Investor Form -->
-                <div class="bg-gradient-to-r from-brand-blue to-brand-teal rounded-[2rem] p-16 text-white reveal">
-                    <h3 class="text-4xl font-bold mb-6 text-center">Shape the Future of Water Intelligence</h3>
-                    <p class="text-xl mb-12 max-w-2xl mx-auto opacity-95 text-center">
-                        Partner with enterprise leaders and visionary investors building the infrastructure for a water-secure future.
-                    </p>
-                    
-                    <!-- Investor Form Link -->
-                    <div class="flex justify-center">
-                        <a href="#" onclick="showPage('investors')" class="w-full sm:w-auto bg-white text-brand-blue px-10 py-4 rounded-full font-bold hover:bg-slate-100 transition-all shadow-xl text-center inline-block">
-                            Investor Inquiry Form
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section id="contact" class="py-40 px-6 text-center">
-            <div class="max-w-4xl mx-auto reveal">
-                <h2 class="text-5xl md:text-8xl font-extrabold text-brand-dark mb-10 tracking-tighter italic">Master the <br><span class="text-brand-blue">Flow.</span></h2>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue text-white px-14 py-5 rounded-full font-bold text-xl hover:bg-blue-700 transition-all shadow-2xl">Request Demo</button>
-                    <a href="mailto:sales@mayimflow.com" class="bg-slate-100 text-brand-dark px-14 py-5 rounded-full font-bold text-xl hover:bg-slate-200 transition-all cursor-pointer text-center">Contact Sales</a>
-                </div>
-                <p class="mt-12 text-slate-400 font-bold text-[10px] uppercase tracking-[0.5em]">Global Enterprise Solutions — Silicon Valley, California</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- PLATFORM PAGE -->
-    <div id="platform-page" class="page-hidden">
-        <section class="min-h-screen bg-white py-32 px-6 pt-32">
-            <div class="max-w-7xl mx-auto">
-                <!-- Hero Section -->
-                <div class="reveal active mb-20">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Advanced Water Intelligence Platform</h1>
-                    <p class="text-2xl text-slate-600 italic font-light max-w-3xl mb-12">
-                        Powered by AI and machine learning, MayimFlow transforms raw water data into predictive intelligence that prevents catastrophic failures before they happen.
-                    </p>
-                    <div class="bg-brand-slate rounded-[2rem] p-8 shadow-lg border border-slate-200 overflow-hidden flex items-center justify-center">
-                        <img src="https://raw.githubusercontent.com/investwisekid/mayim/e5cfc24118be0e28dbc55418f521f835536652d9/dashboard.png" 
-                             alt="MayimFlow Dashboard" 
-                             class="rounded-lg shadow-xl max-w-full h-auto w-auto object-contain">
-                    </div>
-                </div>
-
-                <!-- Core Features -->
-                <div class="mb-32 mt-32">
-                    <h2 class="text-4xl font-bold text-brand-dark mb-12">Core Platform Features</h2>
-                    <div class="feature-grid">
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="brain" class="text-brand-blue w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">AI-Powered Anomaly Detection</h3>
-                            <p class="text-slate-600">Machine learning models trained on decade of water flow data identify unusual patterns and predict failures 24-72 hours in advance.</p>
-                        </div>
-
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="activity" class="text-brand-teal w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">Real-Time Monitoring</h3>
-                            <p class="text-slate-600">Continuous stream monitoring with sub-second latency. Track water flow, pressure, temperature, and quality metrics across your entire infrastructure.</p>
-                        </div>
-
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="zap" class="text-brand-blue w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">Autonomous Response</h3>
-                            <p class="text-slate-600">Automatic mitigation protocols execute in real-time when risks are detected, minimizing damage and preventing expensive emergency repairs.</p>
-                        </div>
-
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="bar-chart-3" class="text-brand-teal w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">Advanced Analytics Dashboard</h3>
-                            <p class="text-slate-600">Intuitive visualizations of complex water systems. Custom reports, trend analysis, and predictive forecasting for facility managers.</p>
-                        </div>
-
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="shield" class="text-brand-blue w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">Enterprise Security</h3>
-                            <p class="text-slate-600">Military-grade encryption, role-based access control, and compliance with HIPAA, SOC 2, and ISO 27001 standards for mission-critical operations.</p>
-                        </div>
-
-                        <div class="feature-card bg-brand-slate/50 border-brand-blue/20">
-                            <div class="w-12 h-12 bg-brand-teal/10 rounded-lg flex items-center justify-center mb-4">
-                                <i data-lucide="link" class="text-brand-teal w-6 h-6"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-brand-dark mb-3">API Integration</h3>
-                            <p class="text-slate-600">RESTful APIs and webhooks for seamless integration with existing BMS, SCADA, and IoT systems. White-label options available.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technology Stack -->
-                <div class="mb-32 bg-brand-dark text-white rounded-[3rem] p-16 reveal">
-                    <h2 class="text-4xl font-bold mb-8">Technology Stack</h2>
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div>
-                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                                <i data-lucide="cpu" class="text-brand-teal w-5 h-5"></i>
-                                Predictive Engine
-                            </h3>
-                            <ul class="space-y-2 text-slate-300">
-                                <li>• LSTM & GRU neural networks for time-series analysis</li>
-                                <li>• Real-time inference at <10ms latency</li>
-                                <li>• Anomaly detection with 98.7% accuracy</li>
-                                <li>• Ensemble learning across multiple models</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                                <i data-lucide="cloud" class="text-brand-teal w-5 h-5"></i>
-                                Cloud Infrastructure
-                            </h3>
-                            <ul class="space-y-2 text-slate-300">
-                                <li>• Multi-region AWS deployment</li>
-                                <li>• 99.99% uptime SLA</li>
-                                <li>• Auto-scaling to handle 10M+ data points/second</li>
-                                <li>• Real-time data lakehouse architecture</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry Solutions -->
-                <div class="mb-32">
-                    <h2 class="text-4xl font-bold text-brand-dark mb-12">Industry-Specific Solutions</h2>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="reveal bg-white border-2 border-brand-blue/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
-                            <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="server" class="text-brand-blue w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Data Centers</h3>
-                            <p class="text-slate-600 mb-4">Liquid cooling system protection with predictive maintenance for AI infrastructure. Prevent downtime that costs $10K+/minute.</p>
-                            <ul class="space-y-2 text-sm text-slate-600">
-                                <li>✓ Immersion cooling monitoring</li>
-                                <li>✓ Facility loop protection</li>
-                                <li>✓ Water quality tracking</li>
-                            </ul>
-                        </div>
-
-                        <div class="reveal bg-white border-2 border-brand-teal/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
-                            <div class="w-16 h-16 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="building" class="text-brand-teal w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Commercial Real Estate</h3>
-                            <p class="text-slate-600 mb-4">Protect high-value properties from water damage. Lower insurance premiums through predictive risk management.</p>
-                            <ul class="space-y-2 text-sm text-slate-600">
-                                <li>✓ Leak detection & localization</li>
-                                <li>✓ Burst pipe prediction</li>
-                                <li>✓ Insurance integration</li>
-                            </ul>
-                        </div>
-
-                        <div class="reveal bg-white border-2 border-brand-blue/20 rounded-[2rem] p-8 hover:shadow-lg transition-all">
-                            <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-                                <i data-lucide="factory" class="text-brand-blue w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Municipal Infrastructure</h3>
-                            <p class="text-slate-600 mb-4">Early detection for water mains and treatment plants. Prevent catastrophic public infrastructure failures.</p>
-                            <ul class="space-y-2 text-sm text-slate-600">
-                                <li>✓ Main break prediction</li>
-                                <li>✓ Quality monitoring</li>
-                                <li>✓ Pressure zone analysis</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="text-center reveal">
-                    <h2 class="text-4xl font-bold text-brand-dark mb-6">Ready to Transform Your Water Infrastructure?</h2>
-                    <p class="text-xl text-slate-600 mb-10">Get a personalized demo of the MayimFlow platform</p>
-                    <button data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="tada" class="bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-2xl">Request Platform Demo</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- MEDIA PAGE (WITH NEW SUMMERFEST ARTICLE + UPDATED TECHCRUNCH TITLE) -->
-    <div id="media-page" class="page-hidden">
-        <section class="min-h-screen bg-white py-32 px-6 pt-32">
-            <div class="max-w-7xl mx-auto">
-                <div class="reveal active mb-16">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Media & Press</h1>
-                    <p class="text-2xl text-slate-600 italic font-light max-w-3xl">
-                        Stay updated with the latest insights, research, and industry news from the MayimFlow team.
-                    </p>
-                </div>
-
-                <!-- NEW ARTICLE: Summerfest TechAI 2026 Top 5 Finalist -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Image -->
-                        <div class="h-80 md:h-full overflow-hidden bg-white flex items-center justify-center p-8">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/8a06b69964988f982a3966a66a4052d0f84da39e/Top%205.png"
-                                 alt="MayimFlow Summerfest TechAI Top 5" 
-                                 class="w-full h-full object-contain hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <!-- Content -->
-                        <div class="p-10 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Recognition</span>
-                                    <span class="text-xs text-slate-500">May 2026</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow Named Top 5 Global Track Finalist at Summerfest TechAI 2026</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    MayimFlow has been selected as a Top 5 Global Track Finalist at Summerfest TechAI 2026, one of the world's premier AI innovation competitions. Competing against hundreds of cutting-edge AI startups from around the globe, MayimFlow's predictive water intelligence platform stood out for its transformative impact on enterprise infrastructure and environmental sustainability.
-                                </p>
-                            </div>
-                            <a href="https://medium.com/@jk2656/mayimflow-named-top-5-global-track-finalist-at-summerfest-techai-2026-pitch-competition-19c7173286fb" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                Read Full Story →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Article 1: SXSW Award Winner -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Image -->
-                        <div class="h-80 md:h-full overflow-hidden bg-white flex items-center justify-center p-8">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/7a885dba7711593c5996ae79a438f455a546c94f/sxsw.png" 
-                                 alt="MayimFlow SXSW Winner" 
-                                 class="w-full h-full object-contain hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <!-- Content -->
-                        <div class="p-10 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Award Winner</span>
-                                    <span class="text-xs text-slate-500">April 2026</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow First Place Winner of the 18th Annual SXSW Innovative World Technology Award</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    From Y Combinator reject to SXSW champion, discover how MayimFlow's AI-powered water intelligence is revolutionizing data center infrastructure. Learn about the journey from setback to success and how predictive water management is reshaping the future of enterprise technology.
-                                </p>
-                            </div>
-                            <a href="https://medium.com/@jk2656/from-yc-reject-to-sxsw-champion-how-mayimflow-is-rewriting-the-future-of-data-centers-58688a492adb" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                Read on Medium →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Article 2: Nvidia Inception Acceptance -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-6 md:p-8 flex items-center justify-center bg-white">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/67dc3ef96c20d746bc48699a7c4f4c9289ed71a6/Nvidia%20Inception%20Program%20Acceptance.png" 
-                                 alt="MayimFlow Joins NVIDIA Inception Program" 
-                                 class="w-full h-auto max-h-[400px] object-scale-down border border-slate-100 rounded-xl hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-10 md:pl-0 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">News & Recognition</span>
-                                    <span class="text-xs text-slate-500">March 2026</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow Accepted into NVIDIA Inception Program</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    MayimFlow has been accepted into the NVIDIA Inception Program — a vetted network of deep-tech startups that NVIDIA has evaluated, endorsed, and chosen to invest its platform behind. This recognition accelerates MayimFlow's AI-powered predictive water intelligence platform, unlocking access to NVIDIA's GPU infrastructure, developer tools, and global investor and enterprise network.
-                                </p>
-                            </div>
-                            <a href="https://medium.com/@mayimflow/mayimflow-joins-nvidia-inception-a-new-chapter-in-predictive-water-intelligence-for-data-centers-fab1a286f40e" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                Read Full Story →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Article 3: SXSW Top 5 Finalist -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="p-6 md:p-8 flex items-center justify-center bg-white">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/e02de97aa67dd619faf97b74f8511694e7aae3fd/SXSW%20Top%205%20finalist.png" 
-                                 alt="MayimFlow SXSW Top 5 Finalist" 
-                                 class="w-full h-auto max-h-[400px] object-scale-down border border-slate-100 rounded-xl hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <div class="p-10 pl-0 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">News & Recognition</span>
-                                    <span class="text-xs text-slate-500">March 2026</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow Selected as Top 5 Finalist for SXSW 2026 Pitch</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    Out of more than 600 global applicants, MayimFlow has been recognized as a Top 5 Finalist for the prestigious SXSW Pitch. At a time when global infrastructure is under unprecedented stress, MayimFlow's selection highlights the critical timing and positive impact of technology designed to prevent water damage before it happens, safeguarding properties and resources worldwide.
-                                </p>
-                            </div>
-                            <a href="https://sxsw.com/wp-content/uploads/2026/03/2026-SXSW-Pitch-Finalists-and-Alternates-1.pdf" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                View SXSW Finalists →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Article 4: TechCrunch (UPDATED TITLE) -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Image -->
-                        <div class="h-80 md:h-full overflow-hidden bg-gradient-to-br from-brand-blue to-brand-teal">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/2f7dc8dfd6f0aea5c376a51a5acaf65980d2badc/Techcrunchwinner.png" 
-                                 alt="TechCrunch Disrupt Winner" 
-                                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <!-- Content -->
-                        <div class="p-10 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Featured Press</span>
-                                    <span class="text-xs text-slate-500">December 2025</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">MayimFlow Winner of the 2025 TechCrunch Google Built World Award</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    TechCrunch covers how MayimFlow's combination of IoT sensors and edge-deployed machine learning models detect signs of impending leaks, protecting data centers from costly downtime and millions in damage. Founder John Khazraee shares his vision for preventing water disasters across enterprise infrastructure.
-                                </p>
-                                <p class="text-slate-500 text-sm italic mb-6">
-                                    "I really believe in the vision. I believe in the impact that we're making. Water is becoming one of those big issues in our world." — John Khazraee, CEO/Founder
-                                </p>
-                            </div>
-                            <a href="https://techcrunch.com/2025/12/28/mayimflow-wants-to-stop-data-center-leaks-before-they-happen/" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                Read on TechCrunch →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Featured Article 5: Medium (Unseen Infrastructure) -->
-                <div class="reveal bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all mb-12">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Image -->
-                        <div class="h-80 md:h-full overflow-hidden bg-gradient-to-br from-brand-blue to-brand-teal">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/f196f61bac32b53a1a3c53ca223f336bef3e592c/TC%20Disrupt.jpg" 
-                                 alt="The Unseen Infrastructure" 
-                                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                        <!-- Content -->
-                        <div class="p-10 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center gap-2 mb-4">
-                                    <span class="text-xs font-bold text-brand-teal uppercase tracking-widest">Article</span>
-                                    <span class="text-xs text-slate-500">2025</span>
-                                </div>
-                                <h2 class="text-3xl font-bold text-brand-dark mb-4">The Unseen Infrastructure: Why a Water Tech Startup Won TechCrunch Battlefield</h2>
-                                <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                    Discover how MayimFlow's revolutionary approach to water infrastructure management earned recognition at TechCrunch Disrupt 2025. Learn about the critical role AI-powered water intelligence plays in modern enterprise infrastructure and why water management is the next frontier in operational technology.
-                                </p>
-                            </div>
-                            <a href="https://medium.com/@mayimflow/the-unseen-infrastructure-why-a-water-tech-startup-won-techcrunch-battlefield-dfc84222cd2c" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="inline-block bg-brand-blue text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-all w-fit">
-                                Read on Medium →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Press Recognition Section -->
-                <div class="mt-20 pt-20 border-t border-slate-200 reveal">
-                    <h3 class="text-3xl font-bold text-brand-dark mb-12 text-center">Recognition & Awards</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
-                            <i data-lucide="award" class="w-12 h-12 text-brand-teal mx-auto mb-4"></i>
-                            <h4 class="text-xl font-bold text-brand-dark mb-2">SXSW 2026</h4>
-                            <p class="text-slate-600 text-sm">First Place Innovative World Technology Award</p>
-                        </div>
-                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
-                            <i data-lucide="award" class="w-12 h-12 text-brand-blue mx-auto mb-4"></i>
-                            <h4 class="text-xl font-bold text-brand-dark mb-2">TechCrunch Disrupt 2025</h4>
-                            <p class="text-slate-600 text-sm">Built World Stage Winner</p>
-                        </div>
-                        <div class="text-center p-8 bg-brand-slate rounded-2xl hover:shadow-lg transition-all">
-                            <i data-lucide="award" class="w-12 h-12 text-brand-teal mx-auto mb-4"></i>
-                            <h4 class="text-xl font-bold text-brand-dark mb-2">Google Industry Award</h4>
-                            <p class="text-slate-600 text-sm">2025 Innovation Excellence</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- INVESTORS PAGE -->
-    <div id="investors-page" class="page-hidden">
-        <section class="py-32 px-6 pt-32">
-            <div class="max-w-4xl mx-auto">
-                <div class="reveal active mb-16 text-center">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">Investor Inquiry</h1>
-                    <p class="text-2xl text-slate-600 italic font-light max-w-3xl mx-auto mb-12">
-                        Interested in backing the future of water intelligence? Share your details and we'll connect with you shortly.
-                    </p>
-                </div>
-
-                <!-- Embedded Tally Form -->
-                <div class="bg-white rounded-[2rem] border border-slate-200 p-8 shadow-lg">
-                    <iframe src="https://tally.so/embed/ODlMDA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 0.5rem;"></iframe>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ABOUT US PAGE (ELI REMOVED) -->
-    <div id="about-page" class="page-hidden">
-        <section class="min-h-screen bg-white py-32 px-6 pt-32">
-            <div class="max-w-7xl mx-auto">
-                <div class="reveal active mb-16">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark mb-6 tracking-tighter">About Us</h1>
-                    <p class="text-2xl text-slate-600 italic font-light max-w-3xl">
-                        A diverse group of engineers, scientists, and visionaries dedicated to solving the world's most pressing water challenges.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-4 gap-8 mb-20 max-w-5xl mx-auto">
-                    <!-- John Khazraee - CEO/Founder -->
-                    <div class="reveal text-center">
-                        <div class="w-full aspect-square bg-gradient-to-br from-brand-blue to-brand-teal rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/48bf64ac1b55b35cb795df168cf4e4fa5bd8dcf4/John%20Headshot.png" alt="John Khazraee" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-2">John Khazraee</h3>
-                        <p class="text-brand-teal font-bold mb-3 text-sm">CEO/Founder</p>
-                        <p class="text-slate-600 text-xs">15+ years Data Centers (Microsoft, Oracle, IBM)<br><br>Engineer and MBA Cornell graduate</p>
-                    </div>
-
-                    <!-- Ray Lok - CTO -->
-                    <div class="reveal text-center delay-200">
-                        <div class="w-full aspect-square bg-gradient-to-br from-brand-teal to-brand-blue rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/328b7c32465ecb645ce86e5f720b08141fe83339/ray%20lok.png" alt="Ray Lok" class="w-full h-full object-cover brightness-75 contrast-125">
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-2">Ray Lok</h3>
-                        <p class="text-brand-teal font-bold mb-3 text-sm">CTO</p>
-                        <p class="text-slate-600 text-xs">15+ years within Water Leakage Technology<br><br>USC graduate</p>
-                    </div>
-
-                    <!-- Jim Wong - CSO -->
-                    <div class="reveal text-center delay-200">
-                        <div class="w-full aspect-square bg-gradient-to-br from-brand-teal to-brand-dark rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/328b7c32465ecb645ce86e5f720b08141fe83339/Jim_Head-removebg-preview.png" alt="Jim Wong" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-2">Jim Wong</h3>
-                        <p class="text-brand-teal font-bold mb-3 text-sm">CSO</p>
-                        <p class="text-slate-600 text-xs">40+ years with Data Center strategy Multiple Exits<br><br>UC-Berkeley, MIT graduate</p>
-                    </div>
-
-                    <!-- Jeremy Jason - CMO -->
-                    <div class="reveal text-center delay-200">
-                        <div class="w-full aspect-square bg-gradient-to-br from-slate-500 to-brand-teal rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/investwisekid/mayim/328b7c32465ecb645ce86e5f720b08141fe83339/jeremy%20headshot.png" alt="Jeremy Jason" class="w-full h-full object-cover brightness-75 contrast-125">
-                        </div>
-                        <h3 class="text-xl font-bold text-brand-dark mb-2">Jeremy Jason</h3>
-                        <p class="text-brand-teal font-bold mb-3 text-sm">CMO</p>
-                        <p class="text-slate-600 text-xs">20+ years within Technology sales<br><br>Harvard University graduate</p>
-                    </div>
-                </div>
-
-                <div class="bg-brand-slate rounded-3xl p-12 text-center">
-                    <h2 class="text-3xl font-bold text-brand-dark mb-6">Our Mission</h2>
-                    <p class="text-lg text-slate-700 max-w-3xl mx-auto">
-                        At MayimFlow, we believe that intelligent water management is essential to building sustainable infrastructure. Our team combines decades of expertise in AI, systems engineering, and enterprise solutions to deliver the most advanced water intelligence platform on the market.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-brand-dark text-white pt-24 pb-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-            <div class="max-w-sm">
-                <img src="https://raw.githubusercontent.com/investwisekid/mayim/eb80f47b07fd3e668bca441ce635d1c6a3a1c472/Mayimflow1.png" alt="MayimFlow" class="h-14 w-auto mb-10">
-                <p class="text-slate-400 text-sm leading-relaxed mb-10 italic">Advanced water intelligence and predictive risk management for the modern built world.</p>
-                <div class="flex gap-8 text-slate-500">
-                    <a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="linkedin" class="w-5 h-5 cursor-pointer hover:text-brand-teal transition"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-16">
-                <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Company</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('about')">About Us</a></li>
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('media')">Media</a></li>
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener noreferrer">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="font-black text-[10px] uppercase tracking-[0.4em] text-slate-500 mb-8">Product</h5>
-                    <ul class="text-slate-400 space-y-4 text-sm font-bold italic">
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('platform')">Platform</a></li>
-                        <li class="cursor-pointer hover:text-brand-teal transition"><a href="#" onclick="showPage('investors')">Investors</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="badges">
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> SXSW 2026 &middot; First Place Innovative World Technology Winner</span>
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> TechCrunch Disrupt 2025 &middot; First Place Industry Award Winner</span>
+          <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg> NVIDIA Inception member</span>
         </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-center text-[9px] text-slate-600 font-black uppercase tracking-[0.5em]">
-            © 2025 MayimFlow AI Inc. All Rights Reserved.
+      </div>
+    </section>
+
+    <!-- Industry stakes (third-party data, linked) -->
+    <section class="stakes" aria-label="Why liquid risk matters">
+      <div class="container">
+        <div class="stakes-grid">
+          <div class="stake">
+            <div class="stake-num">#1</div>
+            <p>Water damage is the most frequent data center insurance claim.</p>
+            <a class="source" href="https://commercial.allianz.com/content/dam/onemarketing/commercial/commercial/reports/commercial-data-center-construction-risks-2026.pdf" target="_blank" rel="noopener">Allianz Commercial, 2026</a>
+          </div>
+          <div class="stake">
+            <div class="stake-num">~24%</div>
+            <p>of data center loss costs are liquid-related.</p>
+            <a class="source" href="https://www.swissre.com/institute/research/sigma-research/sigma-insights-07-2026-insuring-ai-data-centre-risks.html" target="_blank" rel="noopener">Swiss Re sigma, 2026</a>
+          </div>
+          <div class="stake">
+            <div class="stake-num">2&times;</div>
+            <p>Liquid damage is more likely than fire to hit a business.</p>
+            <a class="source" href="https://www.fm.com/insights/simple-solutions-to-prevent-liquid-damage" target="_blank" rel="noopener">FM, 2026</a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        lucide.createIcons();
+    <!-- The stakes: Paris 2023 -->
+    <section class="section section-dark">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">The stakes &middot; Paris, April 2023</span>
+          <h2>One leaking pipe took a Google&nbsp;Cloud region offline.</h2>
+          <p class="lead">A cooling-water leak flooded a battery room and started a fire. 58% of the zone&rsquo;s servers went down, and the region was offline for more than a day.</p>
+        </div>
+        <ol class="incident reveal" aria-label="Incident timeline, US Pacific time">
+          <li class="incident-step"><div class="incident-dot" style="background:var(--blue)"></div><span class="incident-time">4:46 pm</span><p>Cooling-water pipe starts leaking</p></li>
+          <li class="incident-step"><div class="incident-dot" style="background:var(--yellow)"></div><span class="incident-time">7:14 pm</span><p>Smoke detected</p></li>
+          <li class="incident-step"><div class="incident-dot" style="background:var(--orange)"></div><span class="incident-time">8:08 pm</span><p>Battery room flooded and on fire</p></li>
+          <li class="incident-step"><div class="incident-dot" style="background:var(--red)"></div><span class="incident-time">11:04 pm</span><p>Building shut down</p></li>
+        </ol>
+        <div class="callout reveal">Six hours from leak to shutdown. Today&rsquo;s tools alarm after liquid escapes. <strong>Every hour of warning before 4:46&nbsp;pm is time to act.</strong></div>
+        <p class="source" style="margin-top:18px">Sources: <a href="https://status.cloud.google.com/incidents/dS9ps52MUnxQfyDGPfkY" target="_blank" rel="noopener">Google Cloud incident report, europe-west9</a>; <a href="https://www.datacenterdynamics.com/en/news/water-leak-at-paris-global-switch-data-center-causes-fire-leads-to-outages-at-google/" target="_blank" rel="noopener">DCD</a>. Times in US/Pacific.</p>
+      </div>
+    </section>
 
-        // Tally for Demo Form (opens in modal after 15 seconds)
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                if (window.Tally) {
-                    window.Tally.openPopup('Ek5oZA', {
-                        emoji: {
-                            text: '👋',
-                            animation: 'tada'
-                        }
-                    });
-                }
-            }, 15000);  // 15 seconds
-        });
+    <!-- Status quo vs. prediction window -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The status quo</span>
+          <h2>Today&rsquo;s tools only react once liquid is already out.</h2>
+        </div>
+        <div class="window reveal">
+          <div class="window-labels" aria-hidden="true">
+            <div class="window-label good">Prediction window &middot; MayimFlow acts here</div>
+            <div class="window-label late">Too late &middot; today&rsquo;s tools act here</div>
+          </div>
+          <ol class="window-steps" style="list-style:none;margin:0;padding:0">
+            <li class="window-step"><span>1</span><p>Normal <br>operation</p></li>
+            <li class="window-step"><span>2</span><p>Abnormal <br>pattern</p></li>
+            <li class="window-step"><span>3</span><p>Leak <br>forming</p></li>
+            <li class="window-step late"><span>4</span><p>Alarm</p></li>
+            <li class="window-step late"><span>5</span><p>Damage &amp; <br>downtime</p></li>
+          </ol>
+          <div class="window-compare">
+            <div class="card good"><h4>MayimFlow</h4><p>24&ndash;72 hours of warning. Fix it in a planned window.</p></div>
+            <div class="card late"><h4>Today&rsquo;s tools</h4><p>Leak cables, spot sensors, alarms and shutoff valves find liquid after it escapes.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Sticky CTA Show/Hide
-        window.addEventListener('scroll', () => {
-            const stickyCta = document.getElementById('sticky-cta');
-            if (window.scrollY > 800) {
-                stickyCta.classList.remove('hidden');
-            } else {
-                stickyCta.classList.add('hidden');
-            }
-        });
+    <!-- Solution -->
+    <section class="section section-dark bg-panel" style="--bg:url('/assets/img/bg-pipes.webp')">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The solution</span>
+          <h2>An Apple Watch for pipes.</h2>
+          <p class="lead">MayimFlow learns each liquid system&rsquo;s normal rhythm and flags the abnormal one.</p>
+        </div>
+        <div class="grid grid-3 reveal">
+          <div class="card"><span class="step-num">1</span><h3>Sense</h3><p>Clip-on sensors or the BMS / SCADA data you already collect.</p></div>
+          <div class="card"><span class="step-num orange">2</span><h3>Predict</h3><p>AI scores failure risk for every loop in real time.</p></div>
+          <div class="card"><span class="step-num green">3</span><h3>Act</h3><p>Ranked alerts and repair tickets arrive before failure.</p></div>
+        </div>
+        <div class="pills reveal" style="margin-top:32px">
+          <span class="pill">Hardware-agnostic</span>
+          <span class="pill">Built for liquid cooling</span>
+          <span class="pill">Read-only to start</span>
+          <span class="pill">2&ndash;4 week deployment</span>
+        </div>
+      </div>
+    </section>
 
-        // Page Navigation
-        function showPage(pageName) {
-            // Hide all pages
-            document.getElementById('home-page').classList.add('page-hidden');
-            document.getElementById('home-page').classList.remove('page-visible');
-            document.getElementById('platform-page').classList.add('page-hidden');
-            document.getElementById('platform-page').classList.remove('page-visible');
-            document.getElementById('media-page').classList.add('page-hidden');
-            document.getElementById('media-page').classList.remove('page-visible');
-            document.getElementById('investors-page').classList.add('page-hidden');
-            document.getElementById('investors-page').classList.remove('page-visible');
-            document.getElementById('about-page').classList.add('page-hidden');
-            document.getElementById('about-page').classList.remove('page-visible');
+    <!-- Product -->
+    <section class="section">
+      <div class="container split split-5-7">
+        <div class="reveal">
+          <span class="eyebrow">The platform</span>
+          <h2>One screen from sensor signal to repair ticket.</h2>
+          <p>Operators see which loop is drifting, how much time is left and what to do next, without digging through raw sensor feeds.</p>
+          <ul class="check-list" style="margin:24px 0 30px">
+            <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>A live risk score for every cooling loop</span></li>
+            <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Ranked alerts with a predicted time to failure</span></li>
+            <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Repair tickets your team can act on</span></li>
+            <li><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg><span>Works with BMS, SCADA and DCIM data</span></li>
+          </ul>
+          <a class="arrow-link" href="/platform">Explore the platform <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <figure class="reveal" style="margin:0">
+          <div class="frame"><img src="/assets/img/product-dashboard.webp" alt="MayimFlow dashboard showing a cooling loop risk score, failure risk trend and ranked alerts" width="1920" height="1080" loading="lazy"></div>
+          <figcaption>Demo view with sample data.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-            // Show selected page
-            document.getElementById(pageName + '-page').classList.remove('page-hidden');
-            document.getElementById(pageName + '-page').classList.add('page-visible');
+    <!-- Where we work -->
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Where we work</span>
+          <h2>AI data centers and critical infrastructure.</h2>
+          <p class="lead">Liquid cooling turns every rack row into a plumbing system. The same pressure, flow and vibration physics run through the infrastructure around it.</p>
+        </div>
+        <div class="grid grid-2 reveal">
+          <div class="card">
+            <div class="icon-bubble"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></svg></div>
+            <h3>AI data centers</h3>
+            <p>Coolant distribution units, cold plates, immersion tanks and facility water loops, watched continuously so a slow drift never becomes a flooded hall.</p>
+          </div>
+          <div class="card">
+            <div class="icon-bubble teal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></div>
+            <h3>Infrastructure</h3>
+            <p>Utilities, hospitals, commercial buildings and industrial sites, where a burst pipe or failing pump means downtime, damage and safety risk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            window.scrollTo(0, 0);
-            lucide.createIcons();
-        }
+    <!-- Team experience -->
+    <section class="section-tight">
+      <div class="container center">
+        <p class="eyebrow reveal">Our team&rsquo;s experience</p>
+        <div class="logo-row reveal" style="margin:18px 0 26px">
+          <img src="/assets/img/logo-ibm.webp" alt="IBM" width="108" height="44" style="width:108px" loading="lazy">
+          <img src="/assets/img/logo-microsoft.webp" alt="Microsoft" width="155" height="36" style="width:155px" loading="lazy">
+          <img src="/assets/img/logo-oracle.webp" alt="Oracle" width="192" height="29" style="width:192px" loading="lazy">
+        </div>
+        <div class="logo-row reveal" style="margin:0 0 30px">
+          <img src="/assets/img/logo-cornell.webp" alt="Cornell University" width="199" height="28" style="width:199px" loading="lazy">
+          <img src="/assets/img/logo-harvard.webp" alt="Harvard University" width="145" height="38" style="width:145px" loading="lazy">
+          <img src="/assets/img/logo-berkeley.webp" alt="UC Berkeley" width="117" height="33" style="width:117px" loading="lazy">
+          <img src="/assets/img/logo-stanford.webp" alt="Stanford University" width="229" height="30" style="width:229px" loading="lazy">
+        </div>
+        <a class="arrow-link reveal" href="/team">Meet the team <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </section>
 
-        // Reveal logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    <!-- Recognition highlights -->
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head reveal" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px">
+          <div>
+            <span class="eyebrow">Recognition</span>
+            <h2 style="margin:0">Recognition that opened doors.</h2>
+          </div>
+          <a class="arrow-link" href="/recognition">All recognition <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="highlights reveal">
+          <a class="highlight" href="https://sxsw.com/wp-content/uploads/2026/03/SXSW-Pitch-2026-Winners.pdf" target="_blank" rel="noopener">
+            <span class="hl-logos"><img src="/assets/img/logo-sxsw.webp" alt="SXSW" width="121" height="29" style="width:121px" loading="lazy"></span>
+            <span class="when">Mar 2026</span><strong>SXSW Pitch</strong><span>First Place Innovative World Technology Winner</span>
+          </a>
+          <a class="highlight" href="https://techcrunch.com/2025/12/28/mayimflow-wants-to-stop-data-center-leaks-before-they-happen/" target="_blank" rel="noopener">
+            <span class="hl-logos"><img src="/assets/img/logo-techcrunch.webp" alt="TechCrunch" width="140" height="21" style="width:140px" loading="lazy"><img src="/assets/img/logo-google.webp" alt="Google" width="84" height="28" style="width:84px" loading="lazy"></span>
+            <span class="when">Oct 2025</span><strong>TechCrunch Disrupt</strong><span>First Place Industry Award Winner</span>
+          </a>
+          <a class="highlight" href="https://www.ft.com/content/332714be-cbd2-41d3-a426-45bf8b66c933" target="_blank" rel="noopener">
+            <span class="hl-logos"><img src="/assets/img/logo-financial-times.webp" alt="Financial Times" width="134" height="39" style="width:134px" loading="lazy"></span>
+            <span class="when">Mar 2026</span><strong>Financial Times</strong><span>Featured in SXSW coverage</span>
+          </a>
+          <a class="highlight" href="https://medium.com/@mayimflow/mayimflow-joins-nvidia-inception-a-new-chapter-in-predictive-water-intelligence-for-data-centers-fab1a286f40e" target="_blank" rel="noopener">
+            <span class="hl-logos"><img src="/assets/img/logo-nvidia.webp" alt="NVIDIA" width="137" height="26" style="width:137px" loading="lazy"></span>
+            <span class="when">Mar 2026</span><strong>NVIDIA Inception</strong><span>Program member</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        // Header Style
-        const header = document.getElementById('header');
-        const navLinks = document.getElementById('nav-links');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('nav-glass', 'py-4');
-                header.classList.remove('py-6');
-                navLinks.classList.replace('text-white', 'text-slate-600');
-            } else {
-                header.classList.remove('nav-glass', 'py-4');
-                header.classList.add('py-6');
-                navLinks.classList.replace('text-slate-600', 'text-white');
-            }
-        });
+    <!-- Closing CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Every liquid system, predicted.</h2>
+          <p>Starting with AI data centers and extending across critical infrastructure. See what MayimFlow would watch in your facility.</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-light" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
+            <a class="btn btn-ghost" href="mailto:info@mayimflow.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> info@mayimflow.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Counter Animation
-        function animateCounter(element, target, duration = 2000, formatType = 'default') {
-            let currentValue = 0;
-            const increment = target / (duration / 16);
-            
-            const animate = () => {
-                currentValue += increment;
-                if (currentValue >= target) {
-                    currentValue = target;
-                    if (formatType === 'percent-simple') {
-                        element.textContent = Math.round(target) + '%';
-                    } else if (formatType === 'million') {
-                        element.textContent = '$' + target + 'M';
-                    } else if (formatType === 'thousand') {
-                        element.textContent = Math.floor(target).toLocaleString() + '+';
-                    } else {
-                        element.textContent = Math.floor(target) + '%';
-                    }
-                } else {
-                    if (formatType === 'percent-simple') {
-                        element.textContent = Math.round(currentValue) + '%';
-                    } else if (formatType === 'million') {
-                        element.textContent = '$' + Math.floor(currentValue) + 'M';
-                    } else if (formatType === 'thousand') {
-                        element.textContent = Math.floor(currentValue).toLocaleString() + '+';
-                    } else {
-                        element.textContent = Math.floor(currentValue) + '%';
-                    }
-                    requestAnimationFrame(animate);
-                }
-            };
-            animate();
-        }
-
-        // Start counters when visible
-        const metricsObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting && !entry.target.dataset.animated) {
-                    entry.target.dataset.animated = 'true';
-                    const target = parseFloat(entry.target.dataset.target);
-                    const counter = entry.target.querySelector('.counter');
-                    
-                    if (index === 0) {
-                        animateCounter(counter, target, 2500, 'percent-simple');
-                    } else if (index === 1) {
-                        animateCounter(counter, target, 2500, 'thousand');
-                    } else if (index === 2) {
-                        animateCounter(counter, target, 2500, 'million');
-                    } else if (index === 3) {
-                        animateCounter(counter, target, 2500, 'percent');
-                    }
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.metric-item').forEach(item => {
-            metricsObserver.observe(item);
-        });
-    </script>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="MayimFlow home">
+            <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+            <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+          </a>
+          <p>Predictive liquid-risk intelligence for AI data centers and infrastructure.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener" aria-label="MayimFlow on LinkedIn"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:info@mayimflow.com" aria-label="Email MayimFlow"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/platform#how-it-works">How it works</a></li>
+            <li><a href="/platform#integrations">Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/recognition">Recognition</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@mayimflow.com">info@mayimflow.com</a></li>
+            <li><a href="/investors">Investor inquiries</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> MayimFlow AI Inc. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
