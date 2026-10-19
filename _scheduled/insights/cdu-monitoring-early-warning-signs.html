@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What to monitor in a CDU: early warning signs of a liquid-cooling failure | MayimFlow</title>
+  <meta name="description" content="The coolant distribution unit is the heart of a direct-to-chip cooling loop. These are the pressure, flow, temperature, vibration and level signals that change before a CDU loop fails, and how to read them together.">
+  <link rel="canonical" href="https://www.mayimflow.com/insights/cdu-monitoring-early-warning-signs">
+  <meta name="theme-color" content="#0B1222">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="MayimFlow">
+  <meta property="og:url" content="https://www.mayimflow.com/insights/cdu-monitoring-early-warning-signs">
+  <meta property="og:title" content="What to monitor in a CDU: early warning signs of a liquid-cooling failure | MayimFlow">
+  <meta property="og:description" content="The coolant distribution unit is the heart of a direct-to-chip cooling loop. These are the pressure, flow, temperature, vibration and level signals that change before a CDU loop fails, and how to read them together.">
+  <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-insights-cdu-monitoring-early-warning-signs.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What to monitor in a CDU: early warning signs of a liquid-cooling failure | MayimFlow">
+  <meta name="twitter:description" content="The coolant distribution unit is the heart of a direct-to-chip cooling loop. These are the pressure, flow, temperature, vibration and level signals that change before a CDU loop fails, and how to read them together.">
+  <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-insights-cdu-monitoring-early-warning-signs.jpg">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <!-- Fonts and styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <!-- Scripts: site behavior, Tally forms, Vercel analytics -->
+  <script defer src="/assets/js/site.js"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What to monitor in a CDU: early warning signs of a liquid-cooling failure",
+  "description": "The coolant distribution unit is the heart of a direct-to-chip cooling loop. These are the pressure, flow, temperature, vibration and level signals that change before a CDU loop fails, and how to read them together.",
+  "datePublished": "2026-11-25",
+  "dateModified": "2026-11-25",
+  "author": {
+    "@type": "Person",
+    "name": "John Khazraee",
+    "jobTitle": "CEO & Founder",
+    "url": "https://www.linkedin.com/in/johnkhaz/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MayimFlow",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mayimflow.com/assets/img/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.mayimflow.com/insights/cdu-monitoring-early-warning-signs",
+  "image": "https://www.mayimflow.com/assets/img/og-insights-cdu-monitoring-early-warning-signs.jpg"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.mayimflow.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://www.mayimflow.com/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What to monitor in a CDU",
+      "item": "https://www.mayimflow.com/insights/cdu-monitoring-early-warning-signs"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-solid">
+    <div class="container">
+      <a class="brand" href="/" aria-label="MayimFlow home">
+        <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+        <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+        <li><a href="/platform">Platform</a></li>
+        <li><a href="/insights" aria-current="page">Insights</a></li>
+        <li><a href="/recognition">Recognition</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/investors">Investors</a></li>
+        <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+        <li class="mobile-cta"><button type="button" class="btn btn-primary" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button></li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-sm" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
+        <button type="button" class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="page-hero article-hero" style="--bg:url('/assets/img/bg-pipes.webp')">
+        <div class="container narrow">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="/insights">Insights</a></nav>
+          <h1>What to monitor in a CDU: early warning signs of a liquid-cooling failure</h1>
+          <p class="article-meta">By John Khazraee, CEO &amp; Founder &middot; <time datetime="2026-11-25">November 25, 2026</time> &middot; 6 min read</p>
+        </div>
+      </header>
+      <div class="section">
+        <div class="container narrow">
+          <div class="prose">
+
+<p class="lede">In a direct-to-chip system, the coolant distribution unit (CDU) moves coolant to every rack in its loop. When something starts to go wrong in that loop, the CDU&rsquo;s own readings are usually the first place it shows.</p>
+
+<h2>What a CDU does</h2>
+<p>A CDU separates two loops. The facility water loop brings heat away from the building. The technology cooling system (TCS) loop carries coolant, often a 25% propylene glycol mix called PG25, through manifolds and cold plates at the racks. Between them sit pumps, a heat exchanger, filters, an expansion tank and the sensors that control it all.</p>
+
+<h2>The signals that come first</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Signal</th><th>Where</th><th>What a change can mean</th></tr></thead>
+  <tbody>
+    <tr><td>Pump discharge pressure</td><td>After each pump</td><td>A spike suggests a blockage; a sudden drop suggests cavitation or a leak</td></tr>
+    <tr><td>Differential pressure</td><td>Across filters, cold plates and the heat exchanger</td><td>A slow rise means fouling, filter loading or growing flow resistance</td></tr>
+    <tr><td>Flow</td><td>TCS supply and branch lines</td><td>Less coolant reaching racks than the pumps should deliver</td></tr>
+    <tr><td>Supply and return temperature</td><td>Both loops, heat exchanger in and out</td><td>Less heat removed for the same load, often a sign of heat exchanger fouling</td></tr>
+    <tr><td>Pump vibration and current</td><td>Pump motors and bearings</td><td>Bearing wear, cavitation or a pump working harder to hold flow</td></tr>
+    <tr><td>Expansion tank level and top-ups</td><td>Reservoir or expansion tank</td><td>A loop that keeps needing fluid is losing it somewhere</td></tr>
+    <tr><td>Conductivity and pH</td><td>TCS loop</td><td>Coolant chemistry drifting toward corrosion or contamination</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Watch for air</h2>
+<p>ASHRAE&rsquo;s TC 9.9 bulletin on direct-to-chip loops warns that entrained air reduces heat transfer, makes pumps cavitate and speeds up corrosion, and that it can appear weeks after startup. In the data, air often looks like noisy pump pressure and rising pump vibration at a steady load.</p>
+
+<h2>Filters tell you about the whole loop</h2>
+<p>The Open Compute Project&rsquo;s PG25 guidelines note that some CDUs use 25 or 50 micron inline filters and recommend side-stream filtration on larger systems. Filter differential pressure is one of the most useful trends you have: a filter that loads faster than usual means something in the loop is shedding particles, such as corrosion products or debris left from installation.</p>
+
+<h2>Read the signals together</h2>
+<p>Single readings are easy to misread. Combinations are much clearer:</p>
+<ul>
+  <li><strong>Falling pressure, falling tank level, steady load:</strong> fluid is leaving the loop.</li>
+  <li><strong>Rising filter or cold-plate differential pressure plus a wider temperature gap:</strong> fouling is building up.</li>
+  <li><strong>Pump current up, flow flat:</strong> the pump is fighting a restriction.</li>
+  <li><strong>Noisy pressure plus rising vibration:</strong> air or cavitation.</li>
+</ul>
+
+<h2>Thresholds vs. trends</h2>
+<p>Most CDUs ship with high and low alarms. Those are needed, but they fire late: a filter can load for weeks before it trips a limit. Trending each signal against that loop&rsquo;s own normal, at the same load and season, shows the drift while there is still time to plan a repair.</p>
+
+<h2>A short routine</h2>
+<ul class="checklist">
+  <li>Log CDU pressures, flows, temperatures and tank level continuously, not only alarms.</li>
+  <li>Record every top-up, filter change and maintenance action so changes in the data can be explained.</li>
+  <li>Re-baseline each loop after hardware moves, filter changes and coolant work.</li>
+  <li>Review the trends weekly, starting with the loops that serve your densest racks.</li>
+</ul>
+
+<p>MayimFlow reads these signals from the CDU and BMS data you already have, adds clip-on sensors where there are gaps, and flags the abnormal pattern 24&ndash;72 hours ahead. <a href="/platform">See the platform</a>.</p>
+
+          </div>
+          <section class="sources"><h2>Sources</h2><ol><li><a href="https://www.noshok.com/support/support-tools-faq/application-insights/pressure-temperature-instrumentation-for-cooling-distribution-units-cdus-in-ai-data-centers/" target="_blank" rel="noopener">NOSHOK: Pressure and temperature instrumentation for CDUs in AI data centers</a></li><li><a href="https://www.storagereview.com/news/ashrae-tc-9-9-flags-four-ways-direct-to-chip-cooling-loops-go-wrong" target="_blank" rel="noopener">StorageReview: ASHRAE TC 9.9 flags four ways direct-to-chip cooling loops go wrong (Aug 2026)</a></li><li><a href="https://www.opencompute.org/wp-content/uploads/2026/10/OCP-PG25-Guidelines-V1.0.0.pdf" target="_blank" rel="noopener">Open Compute Project: Guidelines for using propylene glycol-based heat transfer fluids in liquid cooled racks (Rev. 2.0, 2026)</a></li></ol></section>
+        </div>
+      </div>
+    </article>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Keep reading</span><h2>More insights</h2></div>
+        <div class="post-grid two">
+          <a class="post-card" href="/insights/leak-detection-vs-leak-prediction"><span class="post-meta">6 min read</span><h3>Leak detection vs. leak prediction in liquid-cooled data centers</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/google-cloud-paris-outage-water-leak"><span class="post-meta">5 min read</span><h3>What the 2023 Google Cloud Paris outage teaches about data center water risk</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/liquid-cooling-risk-checklist"><span class="post-meta">7 min read</span><h3>A liquid-cooling risk checklist for AI data centers</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/ai-racks-data-center-plumbing"><span class="post-meta">5 min read</span><h3>AI racks turned data centers into plumbing systems</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <h2>See what MayimFlow would watch in your facility.</h2>
+          <p>Predictive liquid-risk intelligence for AI data centers and infrastructure.</p>
+          <div class="btn-row"><button type="button" class="btn btn-light" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="MayimFlow home">
+            <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+            <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+          </a>
+          <p>Predictive liquid-risk intelligence for AI data centers and infrastructure.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener" aria-label="MayimFlow on LinkedIn"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:info@mayimflow.com" aria-label="Email MayimFlow"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/platform#how-it-works">How it works</a></li>
+            <li><a href="/platform#integrations">Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/recognition">Recognition</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@mayimflow.com">info@mayimflow.com</a></li>
+            <li><a href="/investors">Investor inquiries</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> MayimFlow AI Inc. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
