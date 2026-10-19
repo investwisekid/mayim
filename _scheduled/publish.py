@@ -7,17 +7,25 @@ or earlier and that isn't published yet:
   - inserts its milestones into the timeline (kept oldest first by data-date),
   - applies its text replacements,
 then marks it published and updates the Recognition entry in sitemap.xml.
+
+It also publishes Insights articles queued in _scheduled/insights.json: on the
+article's date it moves _scheduled/insights/<slug>.html to insights/<slug>.html,
+adds its card to the Insights index (newest first) and adds it to sitemap.xml.
 """
 import datetime
 import json
 import os
 import re
+import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QUEUE = os.path.join(ROOT, "_scheduled", "news.json")
 PAGE = os.path.join(ROOT, "recognition.html")
 SITEMAP = os.path.join(ROOT, "sitemap.xml")
+INSIGHTS_QUEUE = os.path.join(ROOT, "_scheduled", "insights.json")
+INSIGHTS_INDEX = os.path.join(ROOT, "insights", "index.html")
+POST_RE = re.compile(r'<a class="post-card[^"]*" href="[^"]+" data-date="(\d{4}-\d{2}-\d{2})"')
 
 CARD_RE = re.compile(r'<article class="press-card[^"]*" data-date="(\d{4}-\d{2})"')
 ITEM_RE = re.compile(r'<li class="rec-item" data-date="(\d{4}-\d{2})"')
@@ -45,8 +53,46 @@ def insert_milestone(html, li, iso):
     return html[:p] + li + "\n" + html[p:]
 
 
+def insert_post(html, card, iso):
+    for m in POST_RE.finditer(html):
+        if m.group(1) < iso:                      # newest first
+            p = line_start(html, m.start())
+            return html[:p] + card + "\n" + html[p:]
+    p = line_start(html, html.index("<!-- /post-grid -->"))
+    return html[:p] + card + "\n" + html[p:]
+
+
+def publish_insights(today):
+    if not os.path.exists(INSIGHTS_QUEUE):
+        return []
+    queue = json.load(open(INSIGHTS_QUEUE, encoding="utf-8"))
+    index = open(INSIGHTS_INDEX, encoding="utf-8").read()
+    sm = open(SITEMAP, encoding="utf-8").read()
+    done = []
+    for it in queue["items"]:
+        if it.get("published") or it["publish"] > today:
+            continue
+        src = os.path.join(ROOT, "_scheduled", "insights", it["slug"] + ".html")
+        shutil.move(src, os.path.join(ROOT, "insights", it["slug"] + ".html"))
+        index = insert_post(index, it["card"], it["publish"])
+        loc = f"https://www.mayimflow.com/insights/{it['slug']}"
+        if loc not in sm:
+            sm = sm.replace("</urlset>", f"  <url><loc>{loc}</loc><lastmod>{today}</lastmod></url>\n</urlset>")
+        it["published"] = today
+        done.append(it["slug"])
+    if done:
+        sm = re.sub(r"(<loc>https://www\.mayimflow\.com/insights</loc><lastmod>)[^<]+", r"\g<1>" + today, sm)
+        open(INSIGHTS_INDEX, "w", encoding="utf-8").write(index)
+        open(SITEMAP, "w", encoding="utf-8").write(sm)
+        json.dump(queue, open(INSIGHTS_QUEUE, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+    return done
+
+
 def main():
     today = os.environ.get("PUBLISH_DATE") or datetime.datetime.utcnow().date().isoformat()
+    posts = publish_insights(today)
+    if posts:
+        print("published insights:", ", ".join(posts))
     queue = json.load(open(QUEUE, encoding="utf-8"))
     html = open(PAGE, encoding="utf-8").read()
     done = []

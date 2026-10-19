@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "slug": "ai-racks-data-center-plumbing",
+      "publish": "2026-11-04",
+      "title": "AI racks turned data centers into plumbing systems",
+      "card": "          <a class=\"post-card reveal\" href=\"/insights/ai-racks-data-center-plumbing\" data-date=\"2026-11-04\">\n            <span class=\"post-meta\">November 4, 2026 &middot; 5 min read</span>\n            <h3>AI racks turned data centers into plumbing systems</h3>\n            <p>AI racks draw more than ten times the power of a typical rack, and the only practical way to cool them is liquid at the chip. Here is what that changes for data center risk, and what operators need to watch.</p>\n            <span class=\"arrow-link\">Read article <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span>\n          </a>",
+      "published": null
+    },
+    {
+      "slug": "cdu-monitoring-early-warning-signs",
+      "publish": "2026-11-25",
+      "title": "What to monitor in a CDU: early warning signs of a liquid-cooling failure",
+      "card": "          <a class=\"post-card reveal\" href=\"/insights/cdu-monitoring-early-warning-signs\" data-date=\"2026-11-25\">\n            <span class=\"post-meta\">November 25, 2026 &middot; 6 min read</span>\n            <h3>What to monitor in a CDU: early warning signs of a liquid-cooling failure</h3>\n            <p>The coolant distribution unit is the heart of a direct-to-chip cooling loop. These are the pressure, flow, temperature, vibration and level signals that change before a CDU loop fails, and how to read them together.</p>\n            <span class=\"arrow-link\">Read article <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span>\n          </a>",
+      "published": null
+    },
+    {
+      "slug": "coolant-chemistry-liquid-cooling",
+      "publish": "2026-12-16",
+      "title": "Coolant chemistry: the slow failure inside liquid-cooled racks",
+      "card": "          <a class=\"post-card reveal\" href=\"/insights/coolant-chemistry-liquid-cooling\" data-date=\"2026-12-16\">\n            <span class=\"post-meta\">December 16, 2026 &middot; 6 min read</span>\n            <h3>Coolant chemistry: the slow failure inside liquid-cooled racks</h3>\n            <p>Most liquid-cooling problems don't start with a burst hose. They start with coolant chemistry drifting out of range. Here is what goes wrong with PG25 loops, the limits industry guidelines set, and what to measure.</p>\n            <span class=\"arrow-link\">Read article <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span>\n          </a>",
+      "published": null
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coolant chemistry: the slow failure inside liquid-cooled racks | MayimFlow</title>
+  <meta name="description" content="Most liquid-cooling problems don't start with a burst hose. They start with coolant chemistry drifting out of range. Here is what goes wrong with PG25 loops, the limits industry guidelines set, and what to measure.">
+  <link rel="canonical" href="https://www.mayimflow.com/insights/coolant-chemistry-liquid-cooling">
+  <meta name="theme-color" content="#0B1222">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="MayimFlow">
+  <meta property="og:url" content="https://www.mayimflow.com/insights/coolant-chemistry-liquid-cooling">
+  <meta property="og:title" content="Coolant chemistry: the slow failure inside liquid-cooled racks | MayimFlow">
+  <meta property="og:description" content="Most liquid-cooling problems don't start with a burst hose. They start with coolant chemistry drifting out of range. Here is what goes wrong with PG25 loops, the limits industry guidelines set, and what to measure.">
+  <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-insights-coolant-chemistry-liquid-cooling.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coolant chemistry: the slow failure inside liquid-cooled racks | MayimFlow">
+  <meta name="twitter:description" content="Most liquid-cooling problems don't start with a burst hose. They start with coolant chemistry drifting out of range. Here is what goes wrong with PG25 loops, the limits industry guidelines set, and what to measure.">
+  <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-insights-coolant-chemistry-liquid-cooling.jpg">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <!-- Fonts and styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+
+  <!-- Scripts: site behavior, Tally forms, Vercel analytics -->
+  <script defer src="/assets/js/site.js"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Coolant chemistry: the slow failure inside liquid-cooled racks",
+  "description": "Most liquid-cooling problems don't start with a burst hose. They start with coolant chemistry drifting out of range. Here is what goes wrong with PG25 loops, the limits industry guidelines set, and what to measure.",
+  "datePublished": "2026-12-16",
+  "dateModified": "2026-12-16",
+  "author": {
+    "@type": "Person",
+    "name": "John Khazraee",
+    "jobTitle": "CEO & Founder",
+    "url": "https://www.linkedin.com/in/johnkhaz/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MayimFlow",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.mayimflow.com/assets/img/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.mayimflow.com/insights/coolant-chemistry-liquid-cooling",
+  "image": "https://www.mayimflow.com/assets/img/og-insights-coolant-chemistry-liquid-cooling.jpg"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.mayimflow.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://www.mayimflow.com/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Coolant chemistry: the slow failure",
+      "item": "https://www.mayimflow.com/insights/coolant-chemistry-liquid-cooling"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-solid">
+    <div class="container">
+      <a class="brand" href="/" aria-label="MayimFlow home">
+        <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+        <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+        <li><a href="/platform">Platform</a></li>
+        <li><a href="/insights" aria-current="page">Insights</a></li>
+        <li><a href="/recognition">Recognition</a></li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/investors">Investors</a></li>
+        <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+        <li class="mobile-cta"><button type="button" class="btn btn-primary" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button></li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-sm" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button>
+        <button type="button" class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <header class="page-hero article-hero" style="--bg:url('/assets/img/bg-pipes.webp')">
+        <div class="container narrow">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="/insights">Insights</a></nav>
+          <h1>Coolant chemistry: the slow failure inside liquid-cooled racks</h1>
+          <p class="article-meta">By John Khazraee, CEO &amp; Founder &middot; <time datetime="2026-12-16">December 16, 2026</time> &middot; 6 min read</p>
+        </div>
+      </header>
+      <div class="section">
+        <div class="container narrow">
+          <div class="prose">
+
+<p class="lede">A burst hose is obvious. Coolant chemistry drifting out of range isn&rsquo;t, and it can quietly lead to corrosion, clogged cold plates and, eventually, leaks. The good news is that it is measurable long before it does damage.</p>
+
+<h2>What&rsquo;s in the loop</h2>
+<p>Most direct-to-chip systems run PG25: water with about 25% propylene glycol plus corrosion inhibitors. The Open Compute Project&rsquo;s 2026 guidelines for PG25 set out what healthy fluid looks like, including:</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Parameter</th><th>OCP guideline</th></tr></thead>
+  <tbody>
+    <tr><td>Glycol concentration</td><td>24.5&ndash;27.5% by volume</td></tr>
+    <tr><td>pH (non-OAT inhibitors)</td><td>8.0&ndash;10.5</td></tr>
+    <tr><td>Chloride</td><td>Below 5 ppm</td></tr>
+    <tr><td>Sulfate</td><td>Below 10 ppm</td></tr>
+    <tr><td>Total hardness</td><td>Below 25 ppm as CaCO<sub>3</sub></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Your IT and CDU vendors&rsquo; specifications come first. These numbers show the kind of limits that matter.</p>
+
+<h2>How chemistry goes wrong</h2>
+<ul>
+  <li><strong>Inhibitors run out.</strong> Corrosion inhibitors are used up over time. When they are gone, metal surfaces start to corrode. OCP advises restoring them only with additives the fluid supplier approves.</li>
+  <li><strong>Dilution.</strong> Water left over from flushing, or top-ups with plain water, pulls glycol concentration below the target range.</li>
+  <li><strong>Corrosion products.</strong> Copper, brass and steel shed particles as they corrode. OCP flags brass with more than 15% zinc as prone to losing zinc, and ASHRAE warns that stainless steel damaged by welding or grinding can release iron that fouls cold-plate channels.</li>
+  <li><strong>Contamination from materials.</strong> Some sulfur-cured EPDM seals can release sulfate into the fluid over time.</li>
+  <li><strong>Biological growth.</strong> Stagnant fluid and dead legs let biofilm form. OCP recommends filling with coolant within 24 hours of the final flush where possible.</li>
+</ul>
+<p>The end result is the same: particles and deposits narrow the smallest passages, flow drops, chips run hotter and seals and metal wear faster.</p>
+
+<h2>What to measure</h2>
+<ul class="checklist">
+  <li><strong>Conductivity and pH, continuously.</strong> In-line sensors show drift as it happens instead of at the next sample.</li>
+  <li><strong>Glycol concentration</strong> after every top-up and on a regular schedule.</li>
+  <li><strong>Lab analysis</strong> for inhibitor levels, metals, chloride, sulfate and bacteria, on the schedule your fluid supplier recommends.</li>
+  <li><strong>Filter differential pressure and fluid clarity.</strong> Cloudy fluid or filters that load quickly mean something in the loop is shedding particles.</li>
+  <li><strong>Every fluid change.</strong> Log top-ups, flushes and additive doses so chemistry changes can be traced to a cause.</li>
+</ul>
+
+<h2>Read chemistry with the rest of the loop</h2>
+<p>Chemistry rarely fails alone. A slow rise in conductivity, a filter loading faster than usual and a creeping rise in cold-plate differential pressure together tell a much clearer story than any one of them. That is why chemistry belongs on the same screen as pressure, flow and vibration. For those signals, see <a href="/insights/cdu-monitoring-early-warning-signs">what to monitor in a CDU</a>.</p>
+
+<p>MayimFlow tracks conductivity and pH alongside pressure, flow and vibration, learns each loop&rsquo;s normal and flags drift early. <a href="/platform">See the platform</a>.</p>
+
+          </div>
+          <section class="sources"><h2>Sources</h2><ol><li><a href="https://www.opencompute.org/wp-content/uploads/2026/10/OCP-PG25-Guidelines-V1.0.0.pdf" target="_blank" rel="noopener">Open Compute Project: Guidelines for using propylene glycol-based heat transfer fluids in liquid cooled racks (Rev. 2.0, 2026)</a></li><li><a href="https://www.storagereview.com/news/ashrae-tc-9-9-flags-four-ways-direct-to-chip-cooling-loops-go-wrong" target="_blank" rel="noopener">StorageReview: ASHRAE TC 9.9 flags four ways direct-to-chip cooling loops go wrong (Aug 2026)</a></li><li><a href="https://sensorex.com/data-center-liquid-cooling-water-quality/" target="_blank" rel="noopener">Sensorex: Data center liquid cooling water quality (Jul 2026)</a></li></ol></section>
+        </div>
+      </div>
+    </article>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Keep reading</span><h2>More insights</h2></div>
+        <div class="post-grid two">
+          <a class="post-card" href="/insights/leak-detection-vs-leak-prediction"><span class="post-meta">6 min read</span><h3>Leak detection vs. leak prediction in liquid-cooled data centers</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/google-cloud-paris-outage-water-leak"><span class="post-meta">5 min read</span><h3>What the 2023 Google Cloud Paris outage teaches about data center water risk</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/liquid-cooling-risk-checklist"><span class="post-meta">7 min read</span><h3>A liquid-cooling risk checklist for AI data centers</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/ai-racks-data-center-plumbing"><span class="post-meta">5 min read</span><h3>AI racks turned data centers into plumbing systems</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="post-card" href="/insights/cdu-monitoring-early-warning-signs"><span class="post-meta">6 min read</span><h3>What to monitor in a CDU: early warning signs of a liquid-cooling failure</h3><span class="arrow-link">Read article <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <h2>See what MayimFlow would watch in your facility.</h2>
+          <p>Predictive liquid-risk intelligence for AI data centers and infrastructure.</p>
+          <div class="btn-row"><button type="button" class="btn btn-light" data-tally-open="Ek5oZA" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Request a demo</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/" aria-label="MayimFlow home">
+            <img src="/assets/img/mayimflow-mark.webp" alt="" width="40" height="40">
+            <span class="wordmark"><b>MAYIM</b><span>FLOW</span></span>
+          </a>
+          <p>Predictive liquid-risk intelligence for AI data centers and infrastructure.</p>
+          <div class="social">
+            <a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener" aria-label="MayimFlow on LinkedIn"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:info@mayimflow.com" aria-label="Email MayimFlow"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/platform">Platform</a></li>
+            <li><a href="/platform#how-it-works">How it works</a></li>
+            <li><a href="/platform#integrations">Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/insights">Insights</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/recognition">Recognition</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow/jobs" target="_blank" rel="noopener">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@mayimflow.com">info@mayimflow.com</a></li>
+            <li><a href="/investors">Investor inquiries</a></li>
+            <li><a href="https://www.linkedin.com/company/mayimflow" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> MayimFlow AI Inc. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
