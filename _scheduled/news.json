@@ -5,12 +5,12 @@
       "id": "techstars",
       "publish": "2026-10-18",
       "cards": [
-        "        <article class=\"press-card reveal\" data-date=\"2026-09\">\n          <div class=\"press-media contain\"><img src=\"/assets/img/logo-techstars.webp\" alt=\"Techstars logo\" loading=\"lazy\" style=\"max-width:260px\"></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Accelerator</span><span class=\"date\">Sep 2026</span></div>\n            <h3>Selected by Techstars: 1 of 57 companies from 16,000+ applicants</h3>\n            <p>MayimFlow joined the Techstars Alabama EnergyTech Accelerator, one of eight energy companies in the Fall 2026 class.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class\" target=\"_blank\" rel=\"noopener\">Read the announcement <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+        "        <article class=\"press-card reveal\" data-date=\"2026-09\">\n          <div class=\"press-media contain\"><img src=\"/assets/img/logo-techstars.webp\" alt=\"Techstars logo\" loading=\"lazy\" style=\"max-width:260px\"></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Accelerator</span><span class=\"date\">Sep 2026</span></div>\n            <h3>Selected for the Techstars Fall 2026 accelerator class</h3>\n            <p>MayimFlow joined the Techstars Alabama EnergyTech Accelerator, one of eight companies in the program&rsquo;s Fall 2026 class.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.techstars.com/newsroom/introducing-techstars-fall-2026-accelerator-class\" target=\"_blank\" rel=\"noopener\">Read the announcement <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
       ],
       "replace": [
         [
           "<p>Accepted into the Techstars Alabama EnergyTech Accelerator</p>",
-          "<p>1 of 57 companies selected from 16,000+ applicants; Alabama EnergyTech Accelerator</p>"
+          "<p>Fall 2026 class; 1 of 8 companies in the Alabama EnergyTech Accelerator</p>"
         ]
       ],
       "milestones": [],
@@ -33,16 +33,16 @@
       "publish": "2026-11-03",
       "replace": [
         [
-          "SXSW 2026: First Place Innovative World Technology Winner</h3>",
-          "SXSW Pitch 2026: 589 companies applied. MayimFlow took first place.</h3>"
+          "SXSW Pitch 2026: Winner, Innovative World Tech category</h3>",
+          "SXSW Pitch 2026: Innovative World Tech category winner, from nearly 600 applications</h3>"
         ],
         [
-          "<p>From Top 5 finalist to first place in Austin.</p>",
-          "<p>Named a Top 5 finalist from 589 companies, then won first place in Innovative World Technology.</p>"
+          "<p>One of five finalists in its category, then the category winner in Austin.</p>",
+          "<p>One of 45 finalists chosen from nearly 600 applications, then the winner of the Innovative World Tech category.</p>"
         ],
         [
-          "<p>First Place Innovative World Technology Winner</p>",
-          "<p>First Place Innovative World Technology Winner, from 589 applicants</p>"
+          "<p>Innovative World Tech Category Winner</p>",
+          "<p>Innovative World Tech Category Winner; 45 finalists from nearly 600 applications</p>"
         ]
       ],
       "cards": [],
@@ -80,7 +80,7 @@
       "id": "aws-cal-poly",
       "publish": "2026-11-24",
       "cards": [
-        "        <article class=\"press-card reveal\" data-date=\"2026-08\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">Build week</span><span class=\"brand-name\">AWS &times; Cal Poly</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Engineering</span><span class=\"date\">Aug 2026</span></div>\n            <h3>AWS &times; Cal Poly build week: 2nd place out of 16 teams</h3>\n            <p>1,200+ people applied and 100 were selected to form 16 teams. MayimFlow&rsquo;s team took 2nd place after five days of building.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7492976880686542848/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
+        "        <article class=\"press-card reveal\" data-date=\"2026-08\">\n          <div class=\"press-media brand\"><span class=\"brand-sub\">Build week</span><span class=\"brand-name\">AWS &times; Cal Poly</span></div>\n          <div class=\"press-body\">\n            <div class=\"press-meta\"><span class=\"tag\">Engineering</span><span class=\"date\">Aug 2026</span></div>\n            <h3>AWS &times; Cal Poly build week: 2nd place out of 16 teams</h3>\n            <p>1,200+ people applied and 100 were selected to form 16 teams. John Khazraee&rsquo;s team took 2nd place after five days of building.</p>\n            \n            <a class=\"btn btn-primary btn-sm\" style=\"align-self:flex-start\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7492976880686542848/\" target=\"_blank\" rel=\"noopener\">See the post <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>\n          </div>\n        </article>"
       ],
       "milestones": [
         "          <li class=\"rec-item\" data-date=\"2026-08\">\n            <span class=\"rec-date\">Aug 2026</span>\n            <div><h3>AWS &times; Cal Poly</h3><p>2nd place of 16 teams, from 1,200+ applicants</p></div>\n            <a class=\"arrow-link small\" href=\"https://www.linkedin.com/feed/update/urn:li:activity:7492976880686542848/\" target=\"_blank\" rel=\"noopener\">Source <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>\n          </li>"
@@ -121,15 +121,15 @@
       "replace": [
         [
           "Top 5 Global Track finalist at Summerfest TechAI 2026</h3>",
-          "Summerfest TechAI 2026: Top 5 global finalist and keynote speaker</h3>"
+          "Summerfest TechAI 2026: Top 5 global finalist and featured speaker</h3>"
         ],
         [
           "<p>Selected as a finalist and featured speaker in Milwaukee.</p>",
-          "<p>Named one of five global finalists and delivered a keynote in Milwaukee.</p>"
+          "<p>Named one of five global finalists and spoke at a Founder Feature session in Milwaukee.</p>"
         ],
         [
           "<p>Top 5 Global finalist and featured speaker</p>",
-          "<p>Top 5 Global finalist and keynote speaker</p>"
+          "<p>Top 5 Global finalist and featured speaker</p>"
         ]
       ],
       "cards": [],

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What the 2023 Google Cloud Paris outage teaches about data center water risk | MayimFlow</title>
-  <meta name="description" content="In April 2023 a cooling-water leak at a Paris data center flooded a battery room, started a fire and took a Google Cloud region offline for more than a day. A look at the timeline and what it means for liquid-cooled facilities.">
+  <meta name="description" content="In April 2023 a water leak at a Paris data center reached a battery room, a fire broke out and a Google Cloud region went down. A look at the timeline and what it means for liquid-cooled facilities.">
   <link rel="canonical" href="https://www.mayimflow.com/insights/google-cloud-paris-outage-water-leak">
   <meta name="theme-color" content="#0B1222">
 
@@ -13,13 +13,13 @@
   <meta property="og:site_name" content="MayimFlow">
   <meta property="og:url" content="https://www.mayimflow.com/insights/google-cloud-paris-outage-water-leak">
   <meta property="og:title" content="What the 2023 Google Cloud Paris outage teaches about data center water risk | MayimFlow">
-  <meta property="og:description" content="In April 2023 a cooling-water leak at a Paris data center flooded a battery room, started a fire and took a Google Cloud region offline for more than a day. A look at the timeline and what it means for liquid-cooled facilities.">
+  <meta property="og:description" content="In April 2023 a water leak at a Paris data center reached a battery room, a fire broke out and a Google Cloud region went down. A look at the timeline and what it means for liquid-cooled facilities.">
   <meta property="og:image" content="https://www.mayimflow.com/assets/img/og-insights-google-cloud-paris-outage-water-leak.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What the 2023 Google Cloud Paris outage teaches about data center water risk | MayimFlow">
-  <meta name="twitter:description" content="In April 2023 a cooling-water leak at a Paris data center flooded a battery room, started a fire and took a Google Cloud region offline for more than a day. A look at the timeline and what it means for liquid-cooled facilities.">
+  <meta name="twitter:description" content="In April 2023 a water leak at a Paris data center reached a battery room, a fire broke out and a Google Cloud region went down. A look at the timeline and what it means for liquid-cooled facilities.">
   <meta name="twitter:image" content="https://www.mayimflow.com/assets/img/og-insights-google-cloud-paris-outage-water-leak.jpg">
 
   <!-- Icons -->
@@ -41,9 +41,9 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "What the 2023 Google Cloud Paris outage teaches about data center water risk",
-  "description": "In April 2023 a cooling-water leak at a Paris data center flooded a battery room, started a fire and took a Google Cloud region offline for more than a day. A look at the timeline and what it means for liquid-cooled facilities.",
+  "description": "In April 2023 a water leak at a Paris data center reached a battery room, a fire broke out and a Google Cloud region went down. A look at the timeline and what it means for liquid-cooled facilities.",
   "datePublished": "2026-09-09",
-  "dateModified": "2026-10-18",
+  "dateModified": "2026-10-26",
   "author": {
     "@type": "Person",
     "name": "John Khazraee",
@@ -127,17 +127,17 @@
         <div class="container narrow">
           <div class="prose">
 
-<p class="lede">On April 25, 2023, a cooling-water pipe started leaking at a data center in Paris. Within hours, water had reached a battery room, a fire broke out and Google Cloud&rsquo;s europe-west9 region went offline for more than a day.</p>
+<p class="lede">On April 25, 2023, water began leaking at a data center in Paris, reportedly after a cooling-system pump failure. Within hours, water had reached a battery room, a fire broke out and Google Cloud&rsquo;s europe-west9 region went down, in an incident that lasted more than a day.</p>
 
 <h2>The timeline</h2>
 <p>Google&rsquo;s public incident report lays out how quickly the situation escalated. Times are US/Pacific:</p>
 <ul class="timeline-list">
-  <li><strong>4:46 pm</strong> &mdash; a cooling-system water pipe begins to leak.</li>
+  <li><strong>4:46 pm</strong> &mdash; a water leak begins.</li>
   <li><strong>7:14 pm</strong> &mdash; smoke is detected.</li>
-  <li><strong>8:08 pm</strong> &mdash; the battery room is flooded and on fire.</li>
+  <li><strong>8:08 pm</strong> &mdash; water and fire are reported in the battery room.</li>
   <li><strong>11:04 pm</strong> &mdash; the building is shut down.</li>
 </ul>
-<p>About six hours passed between the start of the leak and the shutdown. According to Google&rsquo;s report, 58% of the Compute Engine instances in zone europe-west9-a went down, and the region stayed offline for more than a day.</p>
+<p>About six hours passed between the start of the leak and the shutdown. According to Google&rsquo;s report, 58% of the Compute Engine instances in zone europe-west9-a were taken out of service, and region-wide services weren&rsquo;t largely restored until the following evening.</p>
 
 <h2>Lesson 1: a leak is an uptime problem, not a facilities footnote</h2>
 <p>It is tempting to treat water as a housekeeping issue: mop it up, replace a fitting, move on. Paris shows how a single leak can travel to the one room where water does the most harm, turn into a fire and take down a cloud region. In liquid-cooled facilities, the cooling system and the power system share the same building, and sometimes the same paths.</p>
@@ -158,7 +158,7 @@
 
 <p class="note">We are not claiming any tool would have prevented this specific event. The point is simpler: early warning creates time to act, and time is what the Paris team didn&rsquo;t have.</p>
 
-<p>MayimFlow predicts liquid failures in AI data centers and infrastructure with 24&ndash;72 hours of warning. <a href="/platform">Learn how it works</a>.</p>
+<p>MayimFlow is built to flag the early warning signs of liquid failures in AI data centers and infrastructure. <a href="/platform">Learn how it works</a>.</p>
 
           </div>
           <section class="sources"><h2>Sources</h2><ol><li><a href="https://status.cloud.google.com/incidents/dS9ps52MUnxQfyDGPfkY" target="_blank" rel="noopener">Google Cloud incident report, europe-west9 (April 2023)</a></li><li><a href="https://www.datacenterdynamics.com/en/news/water-leak-at-paris-global-switch-data-center-causes-fire-leads-to-outages-at-google/" target="_blank" rel="noopener">DCD: Water leak at Paris Global Switch data center causes fire, leads to outages at Google (April 2023)</a></li><li><a href="https://commercial.allianz.com/content/dam/onemarketing/commercial/commercial/reports/commercial-data-center-construction-risks-2026.pdf" target="_blank" rel="noopener">Allianz Commercial: Data center construction risks and claims trends (2026)</a></li><li><a href="https://www.fm.com/insights/simple-solutions-to-prevent-liquid-damage" target="_blank" rel="noopener">FM: Simple solutions to prevent liquid damage (2026)</a></li></ol></section>

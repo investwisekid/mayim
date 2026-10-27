@@ -58,3 +58,7 @@ The home page plays a self-hosted, muted loop: `assets/video/hero-720.mp4` (desk
 - No pilot results, customer names or LOIs unless cleared for public use.
 - Public contact email is info@mayimflow.com.
 - Product images are demo data and are labeled that way.
+No specific performance numbers (warning windows like "24–72 hours", detection rates, accuracy, deployment times) unless backed by documented test results that can be shared on request.
+Award and program wording must match the organizer's own wording (for example SXSW: "Innovative World Tech category winner"; TechCrunch: "Built World stage winner").
+Don't use third-party logos (companies, universities, NVIDIA, Google) without permission; name them in text instead. Use the NVIDIA Inception badge, not the NVIDIA logo.
+Investor page: no offering terms, and keep the securities disclaimer.
