@@ -5,7 +5,7 @@
       "publish": "2026-11-04",
       "title": "AI racks turned data centers into plumbing systems",
       "card": "          <a class=\"post-card reveal\" href=\"/insights/ai-racks-data-center-plumbing\" data-date=\"2026-11-04\">\n            <span class=\"post-meta\">November 4, 2026 &middot; 5 min read</span>\n            <h3>AI racks turned data centers into plumbing systems</h3>\n            <p>AI racks draw more than ten times the power of a typical rack, and the only practical way to cool them is liquid at the chip. Here is what that changes for data center risk, and what operators need to watch.</p>\n            <span class=\"arrow-link\">Read article <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span>\n          </a>",
-      "published": null
+      "published": "2026-11-04"
     },
     {
       "slug": "cdu-monitoring-early-warning-signs",
